@@ -1,0 +1,318 @@
+<!DOCTYPE html> 
+<html lang='en-US'> 
+<head> 
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'> 
+<title>Patient / Show</title>
+<link rel="stylesheet" href="/stylesheets/application.css" type="text/css" media="screen" charset="utf-8">
+<script src="/javascripts/livecss.js" charset="utf-8"></script>
+</head>
+<body>
+<script type="text/javascript" charset="utf-8">
+  livecss.watchAll();
+</script>
+
+<div id="topbar">
+  <div class="inner">
+    <ul>
+      <li><a href="#">Выход</a></li>
+    </ul>
+  </div>
+</div>
+<div id="header">
+  <div class="inner">
+    <h1>Милеведент</h1>
+    <div class="search-wrap clearfix">
+      <label for="search_query" class="overlabel">Перейти к пациенту...</label>
+      <input type="text" name="" value="" id="search_query" />     
+    </div>
+    <ul class="navigation-tabs">
+      <li class="current"><a href="">Пациенты</a></li>
+      <li><a href="">Врачи</a></li>
+      <li><a href="">Услуги</a></li>
+    </ul>    
+  </div>  
+</div>
+<div id="layout"> 
+  <div class="inner">
+    <div id="content" class="clearfix">
+      <div id="personalInfo" class="personal-info-wrap clearfix special">
+        <div class="name">
+          <h1>Иванов Иван Петрович</h1>
+          <span class="title">Маркетолог</span>
+        </div>        
+        <ul class="details">
+          <li>
+            <label for="patient[birth_date]">дата рождения</label>
+            <span>12 апреля 1987</span>
+          </li>
+          <li>
+            <label for="patient[address]">адрес</label>
+            <span>Самара, пр. Ленина, д. 34, кв. 13</span>
+          </li>
+          <li>
+            <label for="patient[phone]">телефон</label>
+            <span>(846) 344-21-23</span>
+          </li>
+        </ul>
+        <div class="controls">
+          <a href="" class="admin">Правка</a>
+          <span class="delete">
+            <a href=""><span class="icon"></span></a>            
+          </span>          
+        </div> 
+      </div> 
+      <div class="liner">        
+        <div id="teethChart" class="teeth-chart-wrap">
+          <h3>Таблица зубов пациента</h3>
+          <table>
+            <tr>
+              <td>
+                <span>Pt</span>
+                <label>18</label>
+              </td>
+              <td>
+                <span></span>
+                <label>17</label>
+              </td>
+              <td>
+                <span></span>
+                <label>16</label>
+              </td>
+              <td>
+                <span></span>
+                <label>15</label>
+              </td>
+              <td>
+                <span></span>
+                <label>14</label>
+              </td>
+              <td>
+                <span></span>
+                <label>13</label>
+              </td>
+              <td>
+                <span></span>
+                <label>12</label>
+              </td>
+              <td>
+                <span></span>
+                <label>11</label>
+              </td>
+              <td>
+                <span></span>
+                <label>21</label>
+              </td>
+              <td>
+                <span></span>
+                <label>22</label>
+              </td>
+              <td>
+                <span></span>
+                <label>23</label>
+              </td>
+              <td class="editing">
+                <input id="teeth_24" type="text" />
+                <label for="teeth_24">24</label>
+              </td>
+              <td>
+                <span></span>
+                <label>25</label>
+              </td>
+              <td>
+                <span></span>
+                <label>26</label>
+              </td>
+              <td>
+                <span></span>
+                <label>27</label>
+              </td>
+              <td>
+                <span></span>
+                <label>28</label>
+              </td>
+            </tr>
+            <tr>
+              <td>              
+                <label>48</label>
+                <span></span>
+              </td>
+              <td>              
+                <label>47</label>
+                <span></span>
+              </td>
+              <td>              
+                <label>46</label>
+                <span></span>
+              </td>
+              <td>              
+                <label>45</label>
+                <span></span>
+              </td>
+              <td>
+                <label>44</label>
+                <span></span>
+              </td>
+              <td>              
+                <label>43</label>
+                <span>O</span>
+              </td>
+              <td>              
+                <label>42</label>
+                <span></span>
+              </td>
+              <td>              
+                <label>41</label>
+                <span></span>
+              </td>
+              <td>              
+                <label>31</label>
+                <span></span>
+              </td>
+              <td>              
+                <label>32</label>
+                <span></span>
+              </td>
+              <td>              
+                <label>33</label>
+                <span></span>
+              </td>
+              <td>              
+                <label>34</label>
+                <span>C</span>
+              </td>
+              <td>              
+                <label>35</label>
+                <span></span>
+              </td>
+              <td>
+                <label>36</label>
+                <span></span>
+              </td>
+              <td>              
+                <label>37</label>
+                <span></span>
+              </td>
+              <td>              
+                <label>38</label>
+                <span></span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div id="patientNotes" class="patient-notes-wrap">
+          <div>
+            <h3>Добавить комментарий о пациенте</h3>
+            <form class="simple_form">
+              <div class="input">
+                <textarea></textarea>
+              </div>
+              <div class="actions">
+                <input type="button" value="Добавить комментарий">
+              </div>
+            </form>
+          </div>
+          <ul class="patient-notes">
+            <li id="note1">
+              <div class="type">
+                <a href="#">Комментарий</a>
+              </div>
+              <div class="content">
+                <span class="date">12 мая 2011</span>
+                <span class="doctor">Еременко О.</span>            
+                <p>Интервью с Сашей Берманом: как стать режиссером документального кино.</p>
+              </div>
+            </li>
+            <li id="note2">
+              <div class="type">
+                <a href="#">Комментарий</a>
+              </div>
+              <div class="content">
+                <span class="date">4 мая 2011</span>
+                <span class="doctor">Александрова С.</span>            
+                <p>Один из организаторов фестивалей национальго кино в 35 мм, член творческой группы Meet&Greet.</p>
+              </div>
+            </li>
+          </ul>
+        </div>  
+      </div>
+    </div>
+    
+    <div id="sidebar">
+      <div class="button-to-add-new-wrap clearfix">
+        <div class="button">
+          <a href="">
+            <span>Новое посещение</span>
+          </a>
+        </div>
+      </div>
+      <div id="additionalInfo" class="sidebox-wrapper special">
+        <h5>
+          Дополнительная информация
+          <div class="controls">
+            <a href="" class="admin">Правка</a>
+          </div>
+        </h5>
+        <ul>
+          <li>
+            <label>Гепатит</label>
+            <span>нет</span>
+          </li>
+          <li>
+            <label>Туберкулез</label>
+            <span>нет</span>
+          </li>
+          <li>
+            <label>Прикус</label>
+            <span>ортогнатический</span>
+          </li>
+          <li>
+            <label>Аллергия</label>
+            <span>нет</span>
+          </li>
+          <li>
+            <label>Онкология</label>
+            <span>нет</span>
+          </li>
+          <li>
+            <label>Слизистая</label>
+            <span>без видимых изменений</span>
+          </li>
+        </ul>
+      </div>
+      <div id="recentVisits" class="sidebox-wrapper">
+        <h5>Недавние посещения</h5>
+        <table>
+          <thead>
+            <tr>
+              <th>Дата</th>
+              <th>Врач</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="">2 дня назад</a></td>
+              <td>Еременко О.</td>
+            </tr>
+            <tr>
+              <td><a href="">4 дня назад</a></td>
+              <td>Еременко О.</td>
+            </tr>
+            <tr>
+              <td><a href="">10 февраля</a></td>
+              <td>Еременко О.</td>
+            </tr>
+            <tr>
+              <td><a href="">3 февраля</a></td>
+              <td>Еременко О.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div id="footer" class="clearfix">
+      <p>Managed by <a href="">Bree</a>.</p>
+    </div>  
+  </div>
+</div>
+</body>
+</html>
