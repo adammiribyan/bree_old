@@ -1,0 +1,621 @@
+/*
+Copyright (c) 2010, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.com/yui/license.html
+version: 3.3.0
+build: 3167
+*/
+/*
+	TODO will need to remove settings on HTML since we can't namespace it.
+	TODO with the prefix, should I group by selector or property for weight savings?
+*/
+html{
+	color: #000;
+	background: #F3F1EC;
+  overflow-x: hidden;
+}
+/*
+	TODO remove settings on BODY since we can't namespace it.
+*/
+/*
+	TODO test putting a class on HEAD.
+		- Fails on FF. 
+*/
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+	margin:0;
+	padding:0;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+fieldset,
+img {
+	border:0;
+}
+/*
+	TODO think about hanlding inheritence differently, maybe letting IE6 fail a bit...
+*/
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+	font-style:normal;
+	font-weight:normal;
+}
+/*
+	TODO Figure out where this list-style rule is best set. Hedger has a request to investigate.
+*/
+li {
+	list-style:none;
+}
+
+caption,
+th {
+	text-align:left;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size:100%;
+	font-weight:normal;
+}
+q:before,
+q:after {
+	content:'';
+}
+abbr,
+acronym {
+	border:0;
+	font-variant:normal;
+}
+/* to preserve line-height and selector appearance */
+sup {
+	vertical-align:text-top;
+}
+sub {
+	vertical-align:text-bottom;
+}
+input,
+textarea,
+select {
+	font-family:inherit;
+	font-size:inherit;
+	font-weight:inherit;
+}
+/*to enable resizing for IE*/
+input,
+textarea,
+select {
+	*font-size:100%;
+}
+/*because legend doesn't inherit in IE */
+legend {
+	color:#000;
+}
+
+body {
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;  
+}
+
+input[type="button"],
+input[type="submit"] {
+  padding: 2px;
+}
+
+p {
+  font-size: 1em; /* 12px */
+  line-height: 1.5em; /* 18px */
+  margin: 0 0 1.5em 0;
+}
+.class-for-28px {
+  font-size: 2.3333em; /* 28px */
+  line-height: 1.2857em; /* 36px */
+  margin-top: 0.6429em;
+  margin-bottom: 0em;
+}
+h1 {
+  font-size: 2.1667em; /* 26px */
+  line-height: 1.3846em; /* 36px */
+  margin-bottom: 0em;
+}
+h2 {
+  font-size: 2em; /* 24px */
+  line-height: 1.5em; /* 36px */
+  margin-top: 0.75em;
+  margin-bottom: 0em;
+}
+h3 {
+  font-size: 1.8333em; /* 22px */
+  line-height: 1.6364em; /* 36px */
+  margin-top: 0.8182em;
+  margin-bottom: 0em;
+}
+h4 {
+  font-size: 1.6667em; /* 20px */
+  line-height: 1.8em; /* 36px */
+  margin-top: 0.9em;
+  margin-bottom: 0em;
+}
+h5 {
+  font-size: 1.5em; /* 18px */
+  line-height: 1em; /* 18px */
+  margin-top: 1em;
+  margin-bottom: 0em;
+}
+.class-for-16px {
+  font-size: 1.3333em; /* 16px */
+  line-height: 1.125em; /* 18px */
+  margin-top: 1.125em;
+  margin-bottom: 0em;
+}
+.class-for-14px {
+  font-size: 1.1667em; /* 14px */
+  line-height: 1.2857em; /* 18px */
+  margin-top: 1.2857em;
+  margin-bottom: 0em;
+}
+
+#layout {
+  position: relative;
+  z-index: 100;
+}
+
+.inner {
+  position: relative;
+  margin: 0 auto;
+  width: 992px;
+  padding: 0 30px;
+}
+
+#topbar {
+  display: block;
+  position: relative;
+  background-color: #121212;
+  width: 100%;
+  z-index: 999;
+}
+
+#topbar ul { 
+  text-align: left;
+}
+
+#topbar ul li {
+  padding: 4px 0;
+}
+
+#topbar ul li a {
+  color: #999;
+}
+
+#content {
+  background-color: white;
+}
+
+#header {
+  color: #ddefde;
+  position: relative;
+  display: block;
+  padding: 6px 0;
+  -webkit-box-shadow: #666 0 0 3px;
+  box-shadow: #666 0 0 3px;
+  background-color: #195D00;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#195D00), to(#124200));
+  background-image: -moz-linear-gradient(center top, #195D00 0%, #124200 100% );
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+#content {
+  float: left;  
+  width: 614px;
+  margin-right: 18px;
+  white-space: normal;
+  zoom: 1;
+  letter-spacing: normal;
+  position: relative; /* This fixes the IE7 overflow hidden bug and stops the layout jumping out of place */
+  border: 1px solid #D7D7D7;
+  border-bottom-left-radius: 6px 6px;
+  border-bottom-right-radius: 6px 6px;
+  border-top-left-radius: 6px 6px;
+  border-top-right-radius: 6px 6px;
+  min-height: 500px;
+  background-color: #fff;
+  
+  .liner {
+    padding: 15px 28px 30px 23px;
+  }
+}
+
+#footer {
+  $color: #888;
+  
+  display: block;
+  clear: both;
+  color: $color;
+  padding: 1.5em 0 0 3px;
+  
+  a:link,
+  a:visited {
+    color: $color;
+  }
+}
+
+#sidebar {
+  float: left;
+  position: relative;
+  width: 300px;
+  white-space: normal;
+  zoom: 1;
+  letter-spacing: normal;
+}
+
+.personal-info-wrap,
+.teeth-chart-wrap,
+.patient-notes-wrap {
+  position: relative;
+}
+
+.personal-info-wrap {
+  border-bottom: 1px solid #DADEE5;
+  padding: 15px 28px 0 23px;
+  border-top-left-radius: 6px 6px;
+  border-top-right-radius: 6px 6px;
+  
+  .name {
+    width: 60%;
+    position: relative;
+    float: left;
+    z-index: 99;
+  }
+  
+  .controls {
+    top: -20px;
+  }
+  
+  ul.details {
+    margin-top: 0.6667em;
+    text-align: right;
+    position: relative;
+    float: left;
+    z-index: 20;
+    
+    li {
+      padding-bottom: 3px;
+      
+      label {
+        color: #888;
+        display: block;
+        line-height: 1.2;
+      }
+      
+      span {
+        font-size: 1.1667em;
+      }
+    }    
+  }  
+}
+
+.personal-info-wrap .title {
+  display: inline-block;
+  font-size: 1.1667em;
+  line-height: 1.2857;
+  font-style: italic;
+}
+
+.patient-notes-wrap h3 {
+  font-size: 1.3333em; /* 16px */
+  line-height: 1.125em; /* 18px */
+  margin-top: 1.125em;
+  margin-bottom: .75em;
+}
+
+.patient-notes-wrap {
+  width: 90%;
+}
+
+.patient-notes-wrap .simple_form {
+  margin-bottom: 1.125em;
+}
+
+.patient-notes-wrap .simple_form .input textarea {
+  width: 100%;
+  height: 6em;
+}
+
+.patient-notes-wrap .simple_form .actions {
+  margin-top: .75em;
+  text-align: right;
+}
+
+.patient-notes-wrap ul.patient-notes li {
+  border-top: 1px #ededed solid;
+  padding-top: 1.2857em;
+}
+
+.patient-notes-wrap ul.patient-notes li .type {
+  float: left;
+  margin-right: 12px;
+  margin-top: 3px;
+}
+
+.patient-notes-wrap ul.patient-notes li .type a {
+  background: white url("/images/types_sprite.gif") no-repeat 100% 0%;  
+  display: block;
+  height: 21px;
+  text-indent: -9000px;
+  width: 21px;
+}
+
+.patient-notes-wrap ul.patient-notes li .type a {
+  background-position: 0% 0px;
+}
+
+.patient-notes-wrap ul.patient-notes li .content {
+  margin-left: 36px;
+}  
+
+.patient-notes-wrap ul.patient-notes li .content .date {
+  font-weight: bold;
+  font-size: 1.1667em;
+  line-height: 1.2857;
+  display: block;
+}  
+
+.patient-notes-wrap ul.patient-notes li .content .doctor {
+  color: #888;
+  display: inline-block;
+}
+
+.patient-notes-wrap ul.patient-notes li .content p {
+  font-size: 1.083em;
+  line-height: 1.625;
+  margin: 1.083em 0;
+}
+
+ul.navigation-tabs {
+  position: relative;
+  list-style: none;
+  margin-top: 10px;
+}
+
+.navigation-tabs li {
+  display: inline-block;  
+}
+
+.navigation-tabs li.current a:link,
+.navigation-tabs li.current a:hover, 
+.navigation-tabs li.current a:visited {
+  color: #222;
+  font-weight: bold;
+  text-decoration: none;
+  padding-bottom: 10px;
+  background-color: #F3F1EC;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#F3F1EC));
+  background: -moz-linear-gradient(top, #ffffff, #F3F1EC);
+}
+
+.navigation-tabs li a {
+  padding: 5px 9px 7px;
+  margin: 0 1px;
+  font-size: 1.083em;
+}
+
+.navigation-tabs li a:link,
+.navigation-tabs li a:visited {
+  text-decoration: none;
+  color: inherit;
+  background-color: #217A00;
+}
+
+.navigation-tabs li a:hover {
+  background-color: #000;
+  color: white;
+  text-decoration: none;
+}
+
+.special { background-color: #F1F8FE; }
+
+/* Magic search field at the header */
+.search-wrap {
+  position: relative;
+  float: right;
+  margin-right: 50px;
+  z-index: 99;
+  
+  .overlay-wrap {
+    position: relative;
+    left: 0px;
+    top: 0px;
+    
+    label {
+      white-space: nowrap;
+      width: 85%;
+      color: #777 !important;
+      font-size: 12px;
+      left: 5px;
+      padding-left: 22px;
+      position: absolute;
+      top: -1px;
+      z-index: 20;
+    }
+    
+    input {
+      position: relative;
+      top: 0px;
+      z-index: 10;
+    }
+  }
+  
+  input[type="text"] {
+    background: white url(https://d1a993iq9azmzq.cloudfront.net/images/icon_search.png) no-repeat scroll 6px 6px;
+    border: solid white;
+    border-bottom-left-radius: 4px 4px;
+    border-bottom-right-radius: 4px 4px;
+    border-top-left-radius: 4px 4px;
+    border-top-right-radius: 4px 4px;
+    opacity: 0.9;
+    padding: 5px 10px 3px 22px;    
+  }  
+}
+
+/* admin links */
+a.admin {
+  font-size: 12px;
+  font-weight: normal;
+  padding: 1px;
+  
+  &:link,
+  &:visited {
+    color: red;    
+  }
+  
+  &:hover {
+    color: white;
+    background-color: red;
+    text-decoration: none;
+  }
+}
+
+/* admin/moderator control elements */
+.controls {
+  position: relative;
+  display: block;
+  
+  .delete {
+    display: inline-block;
+    margin-right: 0.4166em;
+    
+    .icon {
+      width: 11px;
+      height: 14px;
+      background: url("/images/icon_trash.png") no-repeat 0 0;
+      position: relative;
+      top: 2px;
+      display: block;
+      z-index: 1;
+    }
+  }
+}
+
+/* patient's teeth chart */
+.teeth-chart-wrap {
+  position: relative;
+  display: block;
+  padding-bottom: 2.5em;
+  border-bottom: 1px solid #ededed;
+  margin-bottom: 2.7em;
+  
+  h3 {
+    font-size: 1.3333em;
+    line-height: 1.125em;
+    margin-bottom: 1em;
+    margin-top: 1.125em;
+  }
+  
+  table {
+    width: 100%;
+    text-align: center;
+    
+    tr {
+      $td-padding: 3px;
+      
+      &:first-child {
+        border-bottom: 1px #444 solid;
+        vertical-align: bottom;
+        
+        td {
+          padding-top: $td-padding;          
+          
+          label {
+            margin-bottom: 1px;
+            margin-top: $td-padding;
+          }
+        }
+      }
+      
+      &:last-child {
+        vertical-align: top;
+        
+        td {
+          padding-bottom: $td-padding;
+          
+          label {
+            margin-top: 1px;
+            margin-bottom: $td-padding;
+          }
+        }
+      }
+    }
+    
+    td {  
+      $hover-color: #ffffcc;
+      
+      width: 6.25%;
+      
+      &.editing {
+        background-color: $hover-color;
+      }      
+      
+      &:hover {
+        background-color: $hover-color;
+      }
+      
+      span {
+        display: block;
+        font-size: 1.1666em;        
+      }
+      
+      label {
+        display: block;
+        color: #999;
+        font-size: 1em;
+        line-height: 1.6;
+        letter-spacing: -1px;
+        cursor: pointer;
+      }
+      
+      input {
+        font-size: 1.1666em;
+        width: 20px;
+        display: inline-block;
+        border: 1px #444 solid;
+        padding: 1px;
+      }
+    }
+  }
+}

@@ -4,7 +4,7 @@ gem 'rails', '3.0.4'
 
 gem 'mysql2'
 
-gem 'less'
+gem 'sass'
 gem 'simple_form'
 gem 'russian'
 gem 'high_voltage'
