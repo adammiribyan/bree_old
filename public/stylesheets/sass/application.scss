@@ -719,3 +719,38 @@ a.admin {
     }
   }
 }
+
+/* initial button styles */
+.button-to-add-new-wrap {
+  margin-bottom: 1.25em;
+}
+
+span.button {
+  display: inline-block;
+  margin-left: -1px;
+  margin-top: -1px;
+  padding: 1px;
+  vertical-align: middle;
+  
+  a {
+    background: url("https://d1a993iq9azmzq.cloudfront.net/images/highrise_sprites.png") no-repeat 0% -276px;
+    display: block;
+    float: left;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    height: 31px;
+    margin-right: 0.4em;
+    padding: 0px 0px 0px 28px;
+    text-decoration: none;
+    text-shadow: white 0px 0px 1px;
+    white-space: nowrap;
+    
+    span {
+      background: url(https://d1a993iq9azmzq.cloudfront.net/images/highrise_sprites.png) no-repeat 100% -338px;
+      color: black;
+      display: block;
+      line-height: 29px;
+      padding: 0px 16px 2px 0px;
+    }
+  }
+}
