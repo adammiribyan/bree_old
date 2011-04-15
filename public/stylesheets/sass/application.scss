@@ -696,6 +696,16 @@ a.admin {
     empty-cells: show;
     line-height: 1.5;
     
+    tbody tr {
+      &:hover {
+        background-color: #ffffcc;
+      }
+      
+      &:first-child td {
+        padding-top: 0.4166em;
+      }
+    }
+    
     th {      
       border-bottom: 1px solid #999;
       font-style: italic;
@@ -703,20 +713,21 @@ a.admin {
       
       &:first-child {
         padding-left: 2px;
+        width: 36%;
       }
     }
     
     td {
-      padding-top: 0.4166em;
+      padding: 0.2166em 0 0.2em;      
       
       &:first-child {
         padding-left: 1px;
-      }
+      }      
       
       a {
         color: inherit;
       }
-    }
+    }   
   }
 }
 

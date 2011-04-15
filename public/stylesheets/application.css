@@ -579,14 +579,19 @@ a.admin {
   border-collapse: collapse;
   empty-cells: show;
   line-height: 1.5; }
+  #recentVisits table tbody tr:hover {
+    background-color: #ffffcc; }
+  #recentVisits table tbody tr:first-child td {
+    padding-top: 0.4166em; }
   #recentVisits table th {
     border-bottom: 1px solid #999;
     font-style: italic;
     padding-top: 0.3em; }
     #recentVisits table th:first-child {
-      padding-left: 2px; }
+      padding-left: 2px;
+      width: 36%; }
   #recentVisits table td {
-    padding-top: 0.4166em; }
+    padding: 0.2166em 0 0.2em; }
     #recentVisits table td:first-child {
       padding-left: 1px; }
     #recentVisits table td a {
