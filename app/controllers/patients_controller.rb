@@ -1,4 +1,5 @@
 class PatientsController < ApplicationController  
+  
   def index
     @patients = Patient.all
 
@@ -31,10 +32,13 @@ class PatientsController < ApplicationController
   end  
 
   def create
-    @patient = Patient.new(params[:patient])
+    @patient = Patient.new(params[:patient])    
     
     # Crafting patient's full name
-    @patient.full_name = [@patient.last_name, @patient.first_name, @patient.middle_name].join(" ")
+    @patient.full_name = [@patient.last_name, @patient.first_name, @patient.middle_name].join(" ") 
+    
+    # Creating an empty teeth_chart for new patient
+    @patient.create_teeth_chart if @patient.teeth_chart.nil?
 
     respond_to do |format|
       if @patient.save
@@ -69,8 +73,15 @@ class PatientsController < ApplicationController
     @patient.destroy
 
     respond_to do |format|
-      format.html { redirect_to(patients_url) }
+      format.html { redirect_to(new_patient_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  
+  private
+  
+  def append_teeth_chart
+    @patient.create_teeth_chart if @patient.teeth_chart.nil?
   end
 end

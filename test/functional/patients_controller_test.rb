@@ -24,6 +24,12 @@ class PatientsControllerTest < ActionController::TestCase
 
     assert_redirected_to patient_path(assigns(:patient))
   end
+  
+  test "should create teeth_chart when creating new patient" do
+    post :create, :patient => @patient.attributes
+    
+    assert_not_nil assigns(:patient).teeth_chart
+  end
 
   test "should show patient" do
     get :show, :id => @patient.to_param

@@ -597,6 +597,7 @@ a.admin {
       $hover-color: #ffffcc;
       
       width: 6.25%;
+      height: 45px;
       
       &.editing {
         background-color: $hover-color;
@@ -608,7 +609,7 @@ a.admin {
       
       span {
         display: block;
-        font-size: 1.1666em;        
+        font-size: 1.1666em;
       }
       
       label {

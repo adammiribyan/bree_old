@@ -515,7 +515,8 @@ a.admin {
           margin-top: 1px;
           margin-bottom: 3px; }
     .teeth-chart-wrap table td {
-      width: 6.25%; }
+      width: 6.25%;
+      height: 45px; }
       .teeth-chart-wrap table td.editing {
         background-color: #ffffcc; }
       .teeth-chart-wrap table td:hover {

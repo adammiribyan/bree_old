@@ -14,6 +14,7 @@ gem 'carrierwave'
 
 gem 'jquery-rails', '~>0.2'
 gem 'rails3-jquery-autocomplete'
+gem 'jeditable-rails'
 
 group :development do
   gem 'capistrano'
