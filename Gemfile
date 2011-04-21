@@ -25,6 +25,4 @@ end
 group :development, :test do
   gem 'mocha'
   gem 'factory_girl_rails'
-  gem 'autotest'
-  gem 'autotest-rails'
 end
