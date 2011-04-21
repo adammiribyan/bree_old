@@ -13,6 +13,7 @@ gem 'mini_magick'
 gem 'carrierwave'
 
 gem 'jquery-rails', '~>0.2'
+gem 'rails3-jquery-autocomplete'
 
 group :development do
   gem 'capistrano'

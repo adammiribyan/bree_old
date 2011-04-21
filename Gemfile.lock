@@ -88,6 +88,9 @@ GEM
       activesupport (= 3.0.4)
       bundler (~> 1.0)
       railties (= 3.0.4)
+    rails3-jquery-autocomplete (0.6.5)
+      rails (~> 3.0.0)
+      yajl-ruby
     railties (3.0.4)
       actionpack (= 3.0.4)
       activesupport (= 3.0.4)
@@ -106,6 +109,7 @@ GEM
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.24)
+    yajl-ruby (0.8.2)
 
 PLATFORMS
   ruby
@@ -122,6 +126,7 @@ DEPENDENCIES
   mocha
   mysql2
   rails (= 3.0.4)
+  rails3-jquery-autocomplete
   russian
   sass
   simple_form

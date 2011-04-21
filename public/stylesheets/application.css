@@ -11,8 +11,10 @@ build: 3167
 */
 html {
   color: #000;
-  background: #F3F1EC;
   overflow-x: hidden; }
+
+html, body {
+  background-color: #F3F1EC; }
 
 /*
 	TODO remove settings on BODY since we can't namespace it.
@@ -131,7 +133,8 @@ body {
 
 input[type="button"],
 input[type="submit"] {
-  padding: 2px; }
+  padding: 2px;
+  margin-right: 2px; }
 
 p {
   font-size: 1em;
@@ -302,8 +305,7 @@ h5 {
     margin-top: 0.6667em;
     text-align: right;
     position: relative;
-    float: left;
-    z-index: 20; }
+    z-index: 0; }
     .personal-info-wrap ul.details li {
       padding-bottom: 3px; }
       .personal-info-wrap ul.details li label {
@@ -429,13 +431,15 @@ ul.navigation-tabs {
     .search-wrap .overlay-wrap label {
       white-space: nowrap;
       width: 85%;
-      color: #777777 !important;
+      color: #777;
       font-size: 13px;
       left: 5px;
       padding-left: 22px;
       position: absolute;
       top: -3px;
       z-index: 20; }
+      .search-wrap .overlay-wrap label.focus {
+        color: #999; }
     .search-wrap .overlay-wrap input {
       position: relative;
       top: 0px;
@@ -469,7 +473,7 @@ a.admin {
   display: block; }
   .controls .delete {
     display: inline-block;
-    margin-right: 0.4166em; }
+    margin-right: 0.5833em; }
     .controls .delete .icon {
       width: 11px;
       height: 14px;
@@ -501,7 +505,8 @@ a.admin {
         padding-top: 3px; }
         .teeth-chart-wrap table tr:first-child td label {
           margin-bottom: 1px;
-          margin-top: 3px; }
+          margin-top: 3px;
+          vertical-align: bottom; }
     .teeth-chart-wrap table tr:last-child {
       vertical-align: top; }
       .teeth-chart-wrap table tr:last-child td {
@@ -573,6 +578,12 @@ a.admin {
     #additionalInfo ul li span {
       display: inline-block; }
 
+#reminders ol {
+  margin-top: 0.5833em; }
+  #reminders ol li {
+    line-height: 1.5;
+    margin-bottom: 0.4166em; }
+
 #recentVisits table {
   width: 100%;
   border-spacing: 0px 0px;
@@ -625,3 +636,68 @@ span.button {
       display: block;
       line-height: 29px;
       padding: 0px 16px 2px 0px; }
+
+body.form #content h1 {
+  border-top-left-radius: 6px 6px;
+  border-top-right-radius: 6px 6px;
+  font-size: 1.6667em;
+  /* 20px */
+  line-height: 1.8em;
+  /* 36px */
+  padding: 7px 28px 3px 23px;
+  border-bottom: 1px solid #DADEE5; }
+body.form .simple_form {
+  letter-spacing: normal;
+  position: relative; }
+  body.form .simple_form fieldset {
+    width: 100%;
+    border-bottom: 1px solid #ededed;
+    padding: 10px 0px;
+    margin-bottom: 10px; }
+    body.form .simple_form fieldset.last-child {
+      border-bottom: none;
+      margin-bottom: 0; }
+  body.form .simple_form #patient_first_name,
+  body.form .simple_form #patient_last_name,
+  body.form .simple_form #patient_middle_name {
+    font-size: 1.5em; }
+  body.form .simple_form .input {
+    padding-bottom: 16px; }
+  body.form .simple_form label {
+    display: inline-block;
+    font-weight: bold;
+    width: 25%;
+    vertical-align: baseline; }
+  body.form .simple_form .string input, body.form .simple_form .string textarea,
+  body.form .simple_form .numeric input,
+  body.form .simple_form .numeric textarea,
+  body.form .simple_form .text input,
+  body.form .simple_form .text textarea,
+  body.form .simple_form .password input,
+  body.form .simple_form .password textarea {
+    background: white url(https://d1a993iq9azmzq.cloudfront.net/images/bkd_field.gif) repeat-x scroll 50% 0%;
+    border-color: #7C7C7C #C3C3C3 #DDD;
+    border-style: solid;
+    border-width: 1px;
+    color: #222;
+    font-size: 12px;
+    font-weight: normal;
+    padding: 3px;
+    width: 60%; }
+  body.form .simple_form .actions {
+    display: block;
+    margin-top: 20px;
+    border-top: 2px solid #444;
+    padding-top: 13px;
+    padding-left: 2px; }
+
+.clearfix:before, .clearfix:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden; }
+.clearfix:after {
+  zoom: 1; }
+
+ul.ui-autocomplete {
+  z-index: 9999 !important; }

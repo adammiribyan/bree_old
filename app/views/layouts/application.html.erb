@@ -3,11 +3,25 @@
   <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <title><%= yield :title %></title>
-    <%= stylesheet_link_tag "reset", "application" %>
-    <%= javascript_include_tag "jquery.min", "application", "rails" %>
+    <%= stylesheet_link_tag "application", "jquery-ui.custom" %>
+    <%= javascript_include_tag "jquery.min", "jquery-ui.custom.min", "application", "rails", "autocomplete-rails.js", "livecss" %>    
     <%= csrf_meta_tag %>
   </head>
-  <body>
-    <%= yield %>
-  </body>
+  <body class="<%= body_classes.join(" ") if body_classes.present? %>">    
+    <%= livecss %>
+    <%= render "layouts/header" %>
+    <div id="layout"> 
+      <div class="inner">
+        <div id="content" class="clearfix">
+          <%= yield %>
+        </div>
+        <div id="sidebar" class="clearfix">
+          <%= yield :sidebar %>          
+        </div>        
+        <div id="footer" class="clearfix">
+          <p>Managed by <a href="<%= AppConfig[:app_link] %>"><%= AppConfig[:app_name] %></a>.</p>
+        </div>        
+      </div>      
+    </div>        
+  </body>  
 </html>

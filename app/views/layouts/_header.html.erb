@@ -1,0 +1,23 @@
+<div id="topbar">
+  <div class="inner">
+    <ul>
+      <li><a href="#">Выход</a></li>
+    </ul>
+  </div>
+</div>
+<div id="header">
+  <div class="inner">
+    <h1><%= AppConfig[:site_name] %></h1>
+    <div class="search-wrap clearfix">
+      <span class="overlay-wrap">
+        <label for="search_query" class="overlabel">Перейти к пациенту...</label>
+        <%= autocomplete_field :patient, :full_name, application_autocomplete_patient_full_name_path, :id => "search_query" %>
+      </span>
+    </div>
+    <ul class="navigation-tabs">
+      <li class="current"><a href="">Пациенты</a></li>
+      <li><a href="">Врачи</a></li>
+      <li><a href="">Услуги</a></li>
+    </ul>    
+  </div>  
+</div>

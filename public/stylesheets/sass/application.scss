@@ -10,9 +10,12 @@ build: 3167
 	TODO with the prefix, should I group by selector or property for weight savings?
 */
 html{
-	color: #000;
-	background: #F3F1EC;
-  overflow-x: hidden;
+	color: #000;  
+  overflow-x: hidden; 
+}
+
+html, body {
+  background-color: #F3F1EC;
 }
 /*
 	TODO remove settings on BODY since we can't namespace it.
@@ -135,6 +138,7 @@ body {
 input[type="button"],
 input[type="submit"] {
   padding: 2px;
+  margin-right: 2px;
 }
 
 p {
@@ -311,8 +315,7 @@ h5 {
     margin-top: 0.6667em;
     text-align: right;
     position: relative;
-    float: left;
-    z-index: 20;
+    z-index: 0;
     
     li {
       padding-bottom: 3px;
@@ -464,16 +467,20 @@ ul.navigation-tabs {
     left: 0px;
     top: 0px;
     
-    label {
+    label {      
       white-space: nowrap;
       width: 85%;
-      color: #777 !important;
+      color: #777;
       font-size: $font-size;
       left: 5px;
       padding-left: 22px;
       position: absolute;
       top: -3px;
       z-index: 20;
+      
+      &.focus {
+        color: #999;
+      }
     }
     
     input {
@@ -521,7 +528,7 @@ a.admin {
   
   .delete {
     display: inline-block;
-    margin-right: 0.4166em;
+    margin-right: 0.5833em;
     
     .icon {
       width: 11px;
@@ -567,6 +574,7 @@ a.admin {
           label {
             margin-bottom: 1px;
             margin-top: $td-padding;
+            vertical-align: bottom;
           }
         }
       }
@@ -688,6 +696,17 @@ a.admin {
   }
 }
 
+#reminders {
+  ol {
+    margin-top: 0.5833em;
+    
+    li {
+      line-height: 1.5;
+      margin-bottom: 0.4166em;
+    }
+  }
+}
+
 #recentVisits {
   table {
     width: 100%;
@@ -764,4 +783,92 @@ span.button {
       padding: 0px 16px 2px 0px;
     }
   }
+}
+
+body.form {
+  #content {
+    h1 {
+      border-top-left-radius: 6px 6px;
+      border-top-right-radius: 6px 6px;
+      font-size: 1.6667em; /* 20px */
+      line-height: 1.8em; /* 36px */
+      padding: 7px 28px 3px 23px;
+      border-bottom: 1px solid #DADEE5;
+    }
+  }
+  
+  .simple_form {  
+    letter-spacing: normal;
+    position: relative;
+    
+    fieldset { 
+      &.last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+      }
+      
+      width: 100%;
+      border-bottom: 1px solid #ededed;    
+      padding: 10px 0px;
+      margin-bottom: 10px;
+    }
+    
+    #patient_first_name,
+    #patient_last_name,
+    #patient_middle_name { font-size: 1.5em; }
+    
+    .input {
+      padding-bottom: 16px;
+    }
+    
+    label {
+      display: inline-block;
+      font-weight: bold;
+      width: 25%;
+      vertical-align: baseline;
+    }
+    
+    .string,
+    .numeric,
+    .text,
+    .password {
+      input, textarea {
+        background: white url(https://d1a993iq9azmzq.cloudfront.net/images/bkd_field.gif) repeat-x scroll 50% 0%;
+        border-color: #7C7C7C #C3C3C3 #DDD;
+        border-style: solid;
+        border-width: 1px;
+        color: #222;
+        font-size: 12px;
+        font-weight: normal;
+        padding: 3px;
+        width: 60%;
+      }
+    }
+    
+    .actions {
+      display: block;
+      margin-top: 20px;
+      border-top: 2px solid #444;
+      padding-top: 13px;
+      padding-left: 2px;
+    }
+  }
+}
+
+.clearfix {
+  &:before,
+  &:after {
+    content: "\0020"; 
+    display: block; 
+    height: 0; 
+    overflow: hidden;
+  }
+  
+  &:after {
+    zoom: 1;
+  }
+}
+
+ul.ui-autocomplete {
+  z-index: 9999 !important;
 }

@@ -1,23 +1,29 @@
 <%= simple_form_for(@patient) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="inputs">
-    <%= f.input :first_name %>
-    <%= f.input :middle_name %>
-    <%= f.input :last_name %>
-    <%= f.input :title %>
-    <%= f.input :birth_date %>
-    <%= f.input :address %>
-    <%= f.input :phone_number %>
-    <%= f.input :hepatitis %>
-    <%= f.input :tuberculosis %>
-    <%= f.input :occlusion %>
-    <%= f.input :allergy %>
-    <%= f.input :oncology %>
-    <%= f.input :mucosa %>
-  </div>
+  <fieldset>
+    <%= f.input :last_name, :label => "Фамилия", :autofocus => focus_only_new %>
+    <%= f.input :first_name, :label => "Имя" %>
+    <%= f.input :middle_name, :label => "Отчество" %>
+    <%= f.input :title, :label => "Специальность" %>
+  </fieldset>
+  
+  <fieldset>
+    <%= f.input :birth_date, :as => :date, :start_year => Date.today.year - 90,
+                                :end_year => Date.today.year - 6,
+                                :order => [:day, :month, :year], :label => "Дата рождения" %>
+    <%= f.input :address, :label => "Адрес" %>
+    <%= f.input :phone_number, :label => "Телефон" %>
+  </fieldset>  
+  
+  <fieldset id="additionalInfo" class="last-child">
+    <%= f.input :hepatitis, :label => "Гепатит" %>
+    <%= f.input :tuberculosis, :label => "Туберкулез" %>
+    <%= f.input :occlusion, :label => "Прикус" %>
+    <%= f.input :allergy, :label => "Аллергия" %>
+    <%= f.input :oncology, :label => "Онкология" %>
+    <%= f.input :mucosa, :label => "Слизистая" %>  
+  </fieldset>
 
   <div class="actions">
-    <%= f.button :submit %>
+    <%= f.submit "Сохранить" %> или <%= link_to "вернуться назад", :back, :class => "admin" %>
   </div>
 <% end %>

@@ -1,6 +1,17 @@
-<h1>Editing patient</h1>
+<% title "Редактирование данных о пациенте" %>
 
-<%= render 'form' %>
+<h1 class="special">Редактирование данных о пациенте</h1>
 
-<%= link_to 'Show', @patient %> |
-<%= link_to 'Back', patients_path %>
+<div class="liner">
+  <%= render "form" %>
+</div>
+
+<% content_for(:sidebar) { %>
+  <div id="reminders" class="sidebox-wrapper">
+    <h5>Напоминания</h5>
+    <ol>
+      <li><%= check_box_tag "birthday", "1", true %> День рождения<li>
+    <li><%= check_box_tag "inspection", "1", true %> Профилактические осмотры</li>
+    </ol>
+  </div>
+<% } %>

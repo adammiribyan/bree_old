@@ -1,70 +1,279 @@
-<p id="notice"><%= notice %></p>
+<% title @patient.full_name %>
 
-<p>
-  <b>First name:</b>
-  <%= @patient.first_name %>
-</p>
+<div id="personalInfo" class="personal-info-wrap clearfix special">
+  <div class="name">
+    <h1><%= @patient.full_name %></h1>
+    <span class="title"><%= @patient.title.titleize %></span>
+  </div>        
+  <ul class="details">
+    <li>
+      <label for="patient[birth_date]">дата рождения</label>
+      <span><%= I18n.l @patient.birth_date.to_date %></span>
+    </li>
+    <li>
+      <label for="patient[address]">адрес</label>
+      <span><%= @patient.address %></span>
+    </li>
+    <li>
+      <label for="patient[phone]">телефон</label>
+      <span><%= @patient.phone_number %></span>
+    </li>
+  </ul>
+  <div class="controls">          
+    <span class="delete">
+      <%= link_to content_tag(:span, "", :class => "icon"), @patient, :confirm => 'Вы уверены?', :method => :delete %>
+    </span>
+    <%= link_to "Правка", edit_patient_path(@patient), :class => "admin" %>
+  </div> 
+</div> 
 
-<p>
-  <b>Middle name:</b>
-  <%= @patient.middle_name %>
-</p>
+<div class="liner">        
+  <div id="teethChart" class="teeth-chart-wrap">
+    <h3>Таблица зубов пациента</h3>
+    <table>
+      <tr>
+        <td>
+          <span>Pt</span>
+          <label>18</label>
+        </td>
+        <td>
+          <span></span>
+          <label>17</label>
+        </td>
+        <td>
+          <span></span>
+          <label>16</label>
+        </td>
+        <td>
+          <span></span>
+          <label>15</label>
+        </td>
+        <td>
+          <span></span>
+          <label>14</label>
+        </td>
+        <td>
+          <span></span>
+          <label>13</label>
+        </td>
+        <td>
+          <span></span>
+          <label>12</label>
+        </td>
+        <td>
+          <span></span>
+          <label>11</label>
+        </td>
+        <td>
+          <span></span>
+          <label>21</label>
+        </td>
+        <td>
+          <span></span>
+          <label>22</label>
+        </td>
+        <td>
+          <span></span>
+          <label>23</label>
+        </td>
+        <td class="editing">
+          <input id="teeth_24" type="text" />
+          <label for="teeth_24">24</label>
+        </td>
+        <td>
+          <span></span>
+          <label>25</label>
+        </td>
+        <td>
+          <span></span>
+          <label>26</label>
+        </td>
+        <td>
+          <span></span>
+          <label>27</label>
+        </td>
+        <td>
+          <span></span>
+          <label>28</label>
+        </td>
+      </tr>
+      <tr>
+        <td>              
+          <label>48</label>
+          <span></span>
+        </td>
+        <td>              
+          <label>47</label>
+          <span></span>
+        </td>
+        <td>              
+          <label>46</label>
+          <span></span>
+        </td>
+        <td>              
+          <label>45</label>
+          <span></span>
+        </td>
+        <td>
+          <label>44</label>
+          <span></span>
+        </td>
+        <td>              
+          <label>43</label>
+          <span>O</span>
+        </td>
+        <td>              
+          <label>42</label>
+          <span></span>
+        </td>
+        <td>              
+          <label>41</label>
+          <span></span>
+        </td>
+        <td>              
+          <label>31</label>
+          <span></span>
+        </td>
+        <td>              
+          <label>32</label>
+          <span></span>
+        </td>
+        <td>              
+          <label>33</label>
+          <span></span>
+        </td>
+        <td>              
+          <label>34</label>
+          <span>C</span>
+        </td>
+        <td>              
+          <label>35</label>
+          <span></span>
+        </td>
+        <td>
+          <label>36</label>
+          <span></span>
+        </td>
+        <td>              
+          <label>37</label>
+          <span></span>
+        </td>
+        <td>              
+          <label>38</label>
+          <span></span>
+        </td>
+      </tr>
+    </table>
+  </div>
 
-<p>
-  <b>Last name:</b>
-  <%= @patient.last_name %>
-</p>
+  <div id="patientNotes" class="patient-notes-wrap">
+    <div>
+      <h3>Добавить комментарий о пациенте</h3>
+      <form class="simple_form">
+        <div class="input">
+          <textarea></textarea>
+        </div>
+        <div class="actions">
+          <input type="button" value="Добавить комментарий">
+        </div>
+      </form>
+    </div>
+    <ul class="patient-notes">
+      <li id="note1">
+        <div class="type">
+          <a href="#">Комментарий</a>
+        </div>
+        <div class="content">
+          <span class="date">12 мая 2011</span>
+          <span class="doctor">Еременко О.</span>            
+          <p>Интервью с Сашей Берманом: как стать режиссером документального кино.</p>
+        </div>
+      </li>
+      <li id="note2">
+        <div class="type">
+          <a href="#">Комментарий</a>
+        </div>
+        <div class="content">
+          <span class="date">4 мая 2011</span>
+          <span class="doctor">Александрова С.</span>            
+          <p>Один из организаторов фестивалей национальго кино в 35 мм, член творческой группы Meet and Greet.</p>
+        </div>
+      </li>
+    </ul>
+  </div>  
+</div>
 
-<p>
-  <b>Title:</b>
-  <%= @patient.title %>
-</p>
+<% content_for(:sidebar) { %>
+  <div class="button-to-add-new-wrap clearfix">
+    <span class="button">
+      <a href="">
+        <span>Новое посещение</span>
+      </a>
+    </span>
+  </div>
 
-<p>
-  <b>Birth date:</b>
-  <%= @patient.birth_date %>
-</p>
+  <div id="additionalInfo" class="sidebox-wrapper special">
+    <h5>
+      Дополнительная информация
+      <div class="controls">
+        <%= link_to "Правка", edit_patient_path(@patient, :anchor => "additionalInfo"), :class => "admin" %>
+      </div>
+    </h5>
+    <ul>
+      <li>
+        <label>Гепатит</label>
+        <span><%= @patient.hepatitis %></span>
+      </li>
+      <li>
+        <label>Туберкулез</label>
+        <span><%= @patient.tuberculosis %></span>
+      </li>
+      <li>
+        <label>Прикус</label>
+        <span><%= @patient.occlusion %></span>
+      </li>
+      <li>
+        <label>Аллергия</label>
+        <span><%= @patient.allergy %></span>
+      </li>
+      <li>
+        <label>Онкология</label>
+        <span><%= @patient.oncology %></span>
+      </li>
+      <li>
+        <label>Слизистая</label>
+        <span><%= @patient.mucosa %></span>
+      </li>
+    </ul>
+  </div>
 
-<p>
-  <b>Address:</b>
-  <%= @patient.address %>
-</p>
-
-<p>
-  <b>Phone number:</b>
-  <%= @patient.phone_number %>
-</p>
-
-<p>
-  <b>Hepatitis:</b>
-  <%= @patient.hepatitis %>
-</p>
-
-<p>
-  <b>Tuberculosis:</b>
-  <%= @patient.tuberculosis %>
-</p>
-
-<p>
-  <b>Occlusion:</b>
-  <%= @patient.occlusion %>
-</p>
-
-<p>
-  <b>Allergy:</b>
-  <%= @patient.allergy %>
-</p>
-
-<p>
-  <b>Oncology:</b>
-  <%= @patient.oncology %>
-</p>
-
-<p>
-  <b>Mucosa:</b>
-  <%= @patient.mucosa %>
-</p>
-
-
-<%= link_to 'Edit', edit_patient_path(@patient) %> |
-<%= link_to 'Back', patients_path %>
+  <div id="recentVisits" class="sidebox-wrapper">
+    <h5>Недавние посещения</h5>
+    <table>
+      <thead>
+        <tr>
+          <th>Дата</th>
+          <th>Врач</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="">2 дня назад</a></td>
+          <td>Еременко О.</td>
+        </tr>
+        <tr>
+          <td><a href="">4 дня назад</a></td>
+          <td>Еременко О.</td>
+        </tr>
+        <tr>
+          <td><a href="">10 февраля</a></td>
+          <td>Еременко О.</td>
+        </tr>
+        <tr>
+          <td><a href="">3 февраля</a></td>
+          <td>Еременко О.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<% } %>

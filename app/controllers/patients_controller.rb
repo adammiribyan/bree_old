@@ -1,6 +1,4 @@
-class PatientsController < ApplicationController
-  # GET /patients
-  # GET /patients.xml
+class PatientsController < ApplicationController  
   def index
     @patients = Patient.all
 
@@ -10,8 +8,6 @@ class PatientsController < ApplicationController
     end
   end
 
-  # GET /patients/1
-  # GET /patients/1.xml
   def show
     @patient = Patient.find(params[:id])
 
@@ -21,8 +17,6 @@ class PatientsController < ApplicationController
     end
   end
 
-  # GET /patients/new
-  # GET /patients/new.xml
   def new
     @patient = Patient.new
 
@@ -32,15 +26,15 @@ class PatientsController < ApplicationController
     end
   end
 
-  # GET /patients/1/edit
-  def edit
-    @patient = Patient.find(params[:id])
-  end
+  def edit    
+    @patient = Patient.find(params[:id])    
+  end  
 
-  # POST /patients
-  # POST /patients.xml
   def create
     @patient = Patient.new(params[:patient])
+    
+    # Crafting patient's full name
+    @patient.full_name = [@patient.last_name, @patient.first_name, @patient.middle_name].join(" ")
 
     respond_to do |format|
       if @patient.save
@@ -53,10 +47,11 @@ class PatientsController < ApplicationController
     end
   end
 
-  # PUT /patients/1
-  # PUT /patients/1.xml
   def update
     @patient = Patient.find(params[:id])
+    
+    # Crafting patient's full name
+    @patient.full_name = [params[:patient][:last_name], params[:patient][:first_name], params[:patient][:middle_name]].join(" ")
 
     respond_to do |format|
       if @patient.update_attributes(params[:patient])
@@ -69,8 +64,6 @@ class PatientsController < ApplicationController
     end
   end
 
-  # DELETE /patients/1
-  # DELETE /patients/1.xml
   def destroy
     @patient = Patient.find(params[:id])
     @patient.destroy
