@@ -1,7 +1,6 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    ZenTest (4.5.0)
     abstract (1.0.0)
     actionmailer (3.0.4)
       actionpack (= 3.0.4)
@@ -30,10 +29,8 @@ GEM
       activesupport (= 3.0.4)
     activesupport (3.0.4)
     arel (2.0.9)
-    autotest (4.4.6)
-      ZenTest (>= 4.4.1)
-    autotest-rails (4.1.0)
-      ZenTest
+    autotest-growl (0.2.9)
+    autotest-standalone (4.5.5)
     builder (2.1.2)
     capistrano (2.5.21)
       highline
@@ -67,6 +64,8 @@ GEM
     mini_magick (3.2)
       subexec (~> 0.0.4)
     mocha (0.9.12)
+    mynyml-redgreen (0.7.1)
+      term-ansicolor (>= 1.0.4)
     mysql2 (0.2.7)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
@@ -102,6 +101,7 @@ GEM
     sass (3.1.0.alpha.253)
     simple_form (1.3.1)
     subexec (0.0.4)
+    term-ansicolor (1.0.5)
     thin (1.2.11)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -110,14 +110,15 @@ GEM
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.24)
+    unicode (0.4.0)
     yajl-ruby (0.8.2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  autotest
-  autotest-rails
+  autotest-growl
+  autotest-standalone
   capistrano
   carrierwave
   factory_girl_rails
@@ -126,6 +127,7 @@ DEPENDENCIES
   jquery-rails (~> 0.2)
   mini_magick
   mocha
+  mynyml-redgreen
   mysql2
   rails (= 3.0.4)
   rails3-jquery-autocomplete
@@ -133,3 +135,4 @@ DEPENDENCIES
   sass
   simple_form
   thin
+  unicode

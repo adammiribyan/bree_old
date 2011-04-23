@@ -1,37 +1,23 @@
+# encoding: utf-8
+
 class PatientsController < ApplicationController  
-  
   def index
     @patients = Patient.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @patients }
-    end
   end
 
   def show
     @patient = Patient.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @patient }
-    end
   end
 
   def new
     @patient = Patient.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @patient }
-    end
   end
 
   def edit    
     @patient = Patient.find(params[:id])    
   end  
 
-  def create
+  def create    
     @patient = Patient.new(params[:patient])    
     
     # Crafting patient's full name
@@ -39,15 +25,11 @@ class PatientsController < ApplicationController
     
     # Creating an empty teeth_chart for new patient
     @patient.create_teeth_chart if @patient.teeth_chart.nil?
-
-    respond_to do |format|
-      if @patient.save
-        format.html { redirect_to(@patient, :notice => 'Patient was successfully created.') }
-        format.xml  { render :xml => @patient, :status => :created, :location => @patient }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @patient.errors, :status => :unprocessable_entity }
-      end
+    
+    if @patient.save
+      redirect_to(@patient, :notice => "Пациент был успешно добавлен.")
+    else
+      render :action => "new"
     end
   end
 
@@ -56,32 +38,20 @@ class PatientsController < ApplicationController
     
     # Crafting patient's full name
     @patient.full_name = [params[:patient][:last_name], params[:patient][:first_name], params[:patient][:middle_name]].join(" ")
-
-    respond_to do |format|
-      if @patient.update_attributes(params[:patient])
-        format.html { redirect_to(@patient, :notice => 'Patient was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @patient.errors, :status => :unprocessable_entity }
-      end
+    
+    if @patient.update_attributes(params[:patient])
+      redirect_to(@patient, :notice => "Данные о пациенте были успешно изменены.")
+    else
+      render :action => "edit"
     end
   end
 
   def destroy
     @patient = Patient.find(params[:id])
-    @patient.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(new_patient_url) }
-      format.xml  { head :ok }
+    
+    if @patient.destroy
+      redirect_to patients_url
     end
   end
   
-  
-  private
-  
-  def append_teeth_chart
-    @patient.create_teeth_chart if @patient.teeth_chart.nil?
-  end
 end

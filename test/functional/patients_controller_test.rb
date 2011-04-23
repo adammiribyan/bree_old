@@ -1,8 +1,10 @@
+# encoding: utf-8
+
 require 'test_helper'
 
 class PatientsControllerTest < ActionController::TestCase
   setup do
-    @patient = patients(:one)
+    @patient = Factory(:patient)
   end
 
   test "should get index" do 
@@ -23,6 +25,19 @@ class PatientsControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to patient_path(assigns(:patient))
+  end
+  
+  test "should form and save patient's full name" do
+    post :create, :patient => Factory(:patient, :first_name => "Harry", :last_name => "Potter", :middle_name => "James").attributes
+    
+    assert_equal "Potter Harry James", assigns(:patient).full_name
+  end
+  
+  test "should correctly titleize patient's title" do
+    patient = Factory(:patient, :title => "архитектор")
+    get :show, :id => patient.to_param
+    
+    assert_select ".title", "Архитектор"
   end
   
   test "should create teeth_chart when creating new patient" do

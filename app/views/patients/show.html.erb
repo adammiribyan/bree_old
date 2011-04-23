@@ -3,7 +3,7 @@
 <div id="personalInfo" class="personal-info-wrap clearfix special">
   <div class="name">
     <h1><%= @patient.full_name %></h1>
-    <span class="title"><%= @patient.title.titleize %></span>
+    <span class="title"><%= @patient.title.mb_chars.titleize.to_s %></span>
   </div>        
   <ul class="details">
     <li>
