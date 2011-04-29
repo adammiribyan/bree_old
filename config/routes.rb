@@ -1,4 +1,6 @@
 Bree::Application.routes.draw do
+  resources :categories
+
   get "teeth_charts/update"
 
   get "application/autocomplete_patient_full_name"

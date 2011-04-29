@@ -14,7 +14,10 @@ module ApplicationHelper
   def body_classes
     @body_classes ||= [controller.controller_name]
     
-    if controller.action_name == "new" || controller.action_name == "edit"
+    if controller.action_name == "new"  || 
+       controller.action_name == "edit" || 
+       controller.action_name == "index"
+      
       @body_classes << "form"
     end
   end

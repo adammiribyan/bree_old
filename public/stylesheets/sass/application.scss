@@ -646,12 +646,19 @@ a.admin {
       
   &+ .sidebox-wrapper {
     margin-top: $space-between;
-  }
+  }  
   
   @include rounded(2px, 6px, #e5e5e5);
   padding: 12px 15px;
   background-color: #fcfcfc;
   position: relative;
+  
+  p { 
+    color: #333;      
+    margin: 0.75em 0;
+  }  
+  
+  strong { font-weight: bold;}
   
   h5 {
     border-bottom: 1px solid #EFEFEF;
@@ -777,7 +784,7 @@ span.button {
     white-space: nowrap;
     
     span {
-      background: url(https://d1a993iq9azmzq.cloudfront.net/images/highrise_sprites.png) no-repeat 100% -338px;
+      background: url("https://d1a993iq9azmzq.cloudfront.net/images/highrise_sprites.png") no-repeat 100% -338px;
       color: black;
       display: block;
       line-height: 29px;
@@ -809,24 +816,40 @@ body.form {
       }
       
       width: 100%;
-      border-bottom: 1px solid #ededed;    
+      border-bottom: 1px dashed #ededed;    
       padding: 10px 0px;
       margin-bottom: 10px;
     }
     
     #patient_first_name,
     #patient_last_name,
-    #patient_middle_name { font-size: 1.5em; }
+    #patient_middle_name,
+    #category_name { font-size: 1.5em; }
     
     .input {
       padding-bottom: 16px;
+    }
+    
+    .hint {
+      color: #999;
+      display: inline-block;
+      font-size: 0.9166em;
+      font-weight: normal;
+      line-height: 1.5;
+      margin-left: 25%;
     }
     
     label {
       display: inline-block;
       font-weight: bold;
       width: 25%;
-      vertical-align: baseline;
+      vertical-align: top;
+      padding-top: 0.0833em;
+    }    
+    
+    textarea {
+      height: 5em;
+      letter-spacing: normal;
     }
     
     .string,
@@ -834,7 +857,7 @@ body.form {
     .text,
     .password {
       input, textarea {
-        background: white url(https://d1a993iq9azmzq.cloudfront.net/images/bkd_field.gif) repeat-x scroll 50% 0%;
+        background: white url("https://d1a993iq9azmzq.cloudfront.net/images/bkd_field.gif") repeat-x scroll 50% 0%;
         border-color: #7C7C7C #C3C3C3 #DDD;
         border-style: solid;
         border-width: 1px;
@@ -872,4 +895,85 @@ body.form {
 
 ul.ui-autocomplete {
   z-index: 9999 !important;
+}
+
+
+// Categories list
+
+table#categories {
+  width: 100%;
+  
+  $spacing: 0.4166em;
+  
+  thead {
+    th {
+      h2 {
+        background: #E9E9E9;
+        font-size: 1.333em;
+        font-weight: bold;
+        line-height: 1;
+        margin: 0;  
+        padding: $spacing;
+      }
+    }    
+  }
+  
+  tbody {
+    tr {
+      &:last-child {
+        td {
+          border-bottom: none;
+        }
+      }
+      
+      td {
+        font-size: 1.1666em;
+        padding: $spacing;
+        border-bottom: 1px solid #efefef;    
+        vertical-align: top;
+        
+        .controls {
+          margin-top: $spacing * 0.5;
+        }
+        
+        &:first-child {
+          padding-right: 20px;
+          width: 85%;
+        }
+        
+        p {
+          font-size: 0.8333em;
+          font-style: italic;
+          margin: 0 0 $spacing 0;
+        }
+        
+        h3 {
+          font-size: inherit;
+          font-weight: bold;
+          margin: 0 0 $spacing 0;
+          padding: 0;
+          
+          a {          
+            &:link,
+            &:visited {
+              color: #444;
+            }            
+            
+            &:hover {
+              color: white;
+              background-color: #444;
+              text-decoration: none;
+              padding: 1px;
+            }
+          }
+        }
+      }
+      
+      &:first-child {
+        td {
+          padding-top: 0.6666em;
+        }
+      }
+    }
+  }
 }

@@ -1,0 +1,105 @@
+<% title "Услуги" %>
+
+<h1 class="special">Услуги</h1>
+
+<div class="liner">
+  <table id="categories">
+    <thead>
+      <tr>
+        <th colspan="2"><h2>Категории</h2</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <h3><a href="">Терапевтическая стоматология</a></h3>
+          <p class="description">
+            На следующей неделе у нас будет время спокойно побеседовать в нашем расширяющемся офисе.
+          </p>
+        </td>
+        <td>
+          <div class="controls">          
+            <span class="delete">
+              <%= link_to content_tag(:span, "", :class => "icon"), "", :confirm => 'Вы уверены?', :method => :delete %>
+            </span>
+            <%= link_to "Правка", "", :class => "admin" %>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h3><a href="">Ортопедия</a></h3>
+          <p class="description">
+            На следующей неделе у нас будет время спокойно побеседовать в нашем расширяющемся офисе.
+          </p>
+        </td>
+        <td>
+          <div class="controls">          
+            <span class="delete">
+              <%= link_to content_tag(:span, "", :class => "icon"), "", :confirm => 'Вы уверены?', :method => :delete %>
+            </span>
+            <%= link_to "Правка", "", :class => "admin" %>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h3><a href="">Имплантология</a></h3>
+          <p class="description">
+            На следующей неделе у нас будет время спокойно побеседовать в нашем расширяющемся офисе.
+          </p>
+        </td>
+        <td>
+          <div class="controls">          
+            <span class="delete">
+              <%= link_to content_tag(:span, "", :class => "icon"), "", :confirm => 'Вы уверены?', :method => :delete %>
+            </span>
+            <%= link_to "Правка", "", :class => "admin" %>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h3><a href="">Хирургическая стоматология</a></h3>
+          <p class="description">
+            На следующей неделе у нас будет время спокойно побеседовать в нашем расширяющемся офисе.
+          </p>
+        </td>
+        <td>
+          <div class="controls">          
+            <span class="delete">
+              <%= link_to content_tag(:span, "", :class => "icon"), "", :confirm => 'Вы уверены?', :method => :delete %>
+            </span>
+            <%= link_to "Правка", "", :class => "admin" %>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h3><a href="">Ортодонтия</a></h3>
+          <p class="description">
+            На следующей неделе у нас будет время спокойно побеседовать в нашем расширяющемся офисе.
+          </p>
+        </td>
+        <td>
+          <div class="controls">          
+            <span class="delete">
+              <%= link_to content_tag(:span, "", :class => "icon"), "", :confirm => 'Вы уверены?', :method => :delete %>
+            </span>
+            <%= link_to "Правка", "", :class => "admin" %>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<% content_for(:sidebar) { %>
+  <div class="button-to-add-new-wrap clearfix">
+    <span class="button">
+      <%= link_to content_tag(:span, "Новая категория"), new_category_path %>
+    </span>
+  </div>
+  
+  <%= render "sidebar" %>
+<% } %>
