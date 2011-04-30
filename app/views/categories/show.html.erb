@@ -1,15 +1,7 @@
-<p id="notice"><%= notice %></p>
+<% title @category.name.mb_chars.titleize.to_s %>
 
-<p>
-  <b>Name:</b>
-  <%= @category.name %>
-</p>
+<h1 class="special"><%= @category.name.mb_chars.titleize.to_s %></h1>
 
-<p>
-  <b>Description:</b>
-  <%= @category.description %>
-</p>
-
-
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<div class="liner">
+  
+</div>

@@ -1,6 +1,11 @@
-<h1>Editing category</h1>
+<% title "Редактирование категории" %>
 
-<%= render 'form' %>
+<h1 class="special">Редактирование категории</h1>
 
-<%= link_to 'Show', @category %> |
-<%= link_to 'Back', categories_path %>
+<div class="liner">
+  <%= render "form" %>
+</div>
+
+<% content_for(:sidebar) { %>  
+  <%= render "sidebar" %>
+<% } %>
