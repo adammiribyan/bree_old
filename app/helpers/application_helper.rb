@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 module ApplicationHelper
   def title(page_title)
     content_for(:title) { page_title }
@@ -28,5 +30,15 @@ module ApplicationHelper
     else
       true
     end
+  end  
+  
+  def link_to_delete(object)
+    content_tag :span, :class => "delete" do
+      link_to content_tag(:span, "", :class => "icon"), object, :confirm => 'Вы уверены?', :method => :delete
+    end
+  end
+  
+  def link_to_edit(model, object)
+    link_to "Правка", send("edit_#{model}_path", object), :class => "admin"
   end
 end

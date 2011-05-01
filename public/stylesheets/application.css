@@ -422,7 +422,7 @@ ul.navigation-tabs {
   background: url("/images/btn-back.png") no-repeat center;
   padding-left: 35px;
   position: absolute;
-  right: -2px;
+  right: 10px;
   top: 5px;
   width: 76px; }
   .header-button a {
@@ -732,42 +732,71 @@ body.form .simple_form {
 ul.ui-autocomplete {
   z-index: 9999 !important; }
 
-table#categories {
-  width: 100%; }
-  table#categories thead th h2 {
+table#categories,
+table#services {
+  width: 100%;
+  margin-bottom: 2.1666em;
+  border-spacing: 0px 0px;
+  border-collapse: collapse;
+  empty-cells: show; }
+  table#categories thead th h2,
+  table#services thead th h2 {
     background: #E9E9E9;
     font-size: 1.333em;
     font-weight: bold;
     line-height: 1;
     margin: 0;
     padding: 0.417em; }
-  table#categories tbody tr:last-child td {
+  table#categories tbody tr:last-child td,
+  table#services tbody tr:last-child td {
     border-bottom: none; }
-  table#categories tbody tr td {
+  table#categories tbody tr td,
+  table#services tbody tr td {
     font-size: 1.1666em;
     padding: 0.417em;
     border-bottom: 1px solid #efefef;
     vertical-align: top; }
-    table#categories tbody tr td .controls {
+    table#categories tbody tr td .controls,
+    table#services tbody tr td .controls {
       margin-top: 0.208em; }
-    table#categories tbody tr td:first-child {
+    table#categories tbody tr td:first-child,
+    table#services tbody tr td:first-child {
       padding-right: 20px;
       width: 85%; }
-    table#categories tbody tr td p {
-      font-size: 0.8333em;
-      font-style: italic;
+    table#categories tbody tr td:last-child,
+    table#services tbody tr td:last-child {
+      text-align: right; }
+    table#categories tbody tr td p,
+    table#services tbody tr td p {
+      font-size: 1em;
       margin: 0 0 0.417em 0; }
-    table#categories tbody tr td h3 {
+      table#categories tbody tr td p.description,
+      table#services tbody tr td p.description {
+        font-size: 0.8333em;
+        font-style: italic; }
+      table#categories tbody tr td p.price,
+      table#services tbody tr td p.price {
+        font-family: "Courier New", Courier, serif;
+        color: #333; }
+    table#categories tbody tr td h3,
+    table#services tbody tr td h3 {
       font-size: inherit;
       font-weight: bold;
       margin: 0 0 0.417em 0;
       padding: 0; }
-      table#categories tbody tr td h3 a:link, table#categories tbody tr td h3 a:visited {
+      table#categories tbody tr td h3 a:link, table#categories tbody tr td h3 a:visited,
+      table#services tbody tr td h3 a:link,
+      table#services tbody tr td h3 a:visited {
         color: #444; }
-      table#categories tbody tr td h3 a:hover {
+      table#categories tbody tr td h3 a:hover,
+      table#services tbody tr td h3 a:hover {
         color: white;
         background-color: #444;
         text-decoration: none;
         padding: 1px; }
-  table#categories tbody tr:first-child td {
+  table#categories tbody tr:first-child td,
+  table#services tbody tr:first-child td {
     padding-top: 0.6666em; }
+
+table#services td:first-child {
+  width: 65% !important; }

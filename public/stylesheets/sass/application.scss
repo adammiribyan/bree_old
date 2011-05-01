@@ -459,7 +459,7 @@ ul.navigation-tabs {
   background: url("/images/btn-back.png") no-repeat center;
   padding-left: 35px;
   position: absolute;
-  right: -2px;
+  right: 10px;
   top: 5px;
   width: 76px;
   
@@ -917,8 +917,13 @@ ul.ui-autocomplete {
 
 // Categories list
 
-table#categories {
+table#categories,
+table#services {
   width: 100%;
+  margin-bottom: 2.1666em;
+  border-spacing: 0px 0px;
+  border-collapse: collapse;
+  empty-cells: show;
   
   $spacing: 0.4166em;
   
@@ -958,10 +963,23 @@ table#categories {
           width: 85%;
         }
         
+        &:last-child {
+          text-align: right;
+        }
+        
         p {
-          font-size: 0.8333em;
-          font-style: italic;
+          font-size: 1em;          
           margin: 0 0 $spacing 0;
+          
+          &.description { 
+            font-size: 0.8333em;
+            font-style: italic; 
+          }
+          
+          &.price {
+            font-family: "Courier New", Courier, serif;
+            color: #333;
+          }
         }
         
         h3 {
@@ -992,5 +1010,11 @@ table#categories {
         }
       }
     }
+  }
+}
+
+table#services {
+  td:first-child {
+    width: 65% !important;
   }
 }
