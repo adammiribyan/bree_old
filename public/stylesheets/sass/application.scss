@@ -451,7 +451,24 @@ ul.navigation-tabs {
   text-decoration: none;
 }
 
-.special { background-color: #F1F8FE !important; }
+.special { 
+  background-color: #F1F8FE !important;
+}
+
+.header-button {
+  background: url("/images/btn-back.png") no-repeat center;
+  padding-left: 35px;
+  position: absolute;
+  right: -2px;
+  top: 5px;
+  width: 76px;
+  
+  a {
+    text-decoration: none;
+    font-size: 0.7em;
+    color: #888;
+  }
+}
 
 /* Magic search field at the header */
 .search-wrap {

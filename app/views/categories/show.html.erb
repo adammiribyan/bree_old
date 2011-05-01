@@ -1,6 +1,11 @@
 <% title @category.name.mb_chars.titleize.to_s %>
 
-<h1 class="special"><%= @category.name.mb_chars.titleize.to_s %></h1>
+<h1 class="special">
+  <%= @category.name.mb_chars.titleize.to_s %>
+  <div class="header-button">
+    <%= link_to "Назад", :back %>
+  </div>
+</h1>
 
 <div class="liner">
   

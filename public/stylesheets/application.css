@@ -418,6 +418,18 @@ ul.navigation-tabs {
 .special {
   background-color: #f1f8fe !important; }
 
+.header-button {
+  background: url("/images/btn-back.png") no-repeat center;
+  padding-left: 35px;
+  position: absolute;
+  right: -2px;
+  top: 5px;
+  width: 76px; }
+  .header-button a {
+    text-decoration: none;
+    font-size: 0.7em;
+    color: #888; }
+
 /* Magic search field at the header */
 .search-wrap {
   position: relative;
