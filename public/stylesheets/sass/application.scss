@@ -940,6 +940,12 @@ table#services {
     }    
   }
   
+  tfoot {
+    td {
+      padding: 0.8333em $spacing;      
+    }
+  }
+  
   tbody {
     tr {
       &:last-child {

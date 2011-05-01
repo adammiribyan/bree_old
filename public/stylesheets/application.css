@@ -747,6 +747,9 @@ table#services {
     line-height: 1;
     margin: 0;
     padding: 0.417em; }
+  table#categories tfoot td,
+  table#services tfoot td {
+    padding: 0.833em 0.417em; }
   table#categories tbody tr:last-child td,
   table#services tbody tr:last-child td {
     border-bottom: none; }
