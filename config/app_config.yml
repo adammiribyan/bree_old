@@ -6,11 +6,3 @@ default:
   # Application link at the footer of each page
   app_name: "Bree"
   app_link: "http://adammiribyan.com"
-
-development:
-  
-  livecss: true
-  
-production:
-  
-  livecss: false

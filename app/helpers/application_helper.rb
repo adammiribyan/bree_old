@@ -5,14 +5,6 @@ module ApplicationHelper
     content_for(:title) { page_title }
   end
   
-  def livecss
-    if AppConfig[:livecss]
-      content_tag(:script, "livecss.watchAll();") 
-    else
-      nil
-    end
-  end
-  
   def body_classes
     @body_classes ||= [controller.controller_name]
     
