@@ -20,6 +20,10 @@ gem 'jeditable-rails'
 group :development do
   gem 'capistrano'
   gem 'thin'
+  
+  gem 'rb-inotify'
+  gem 'guard-livereload'
+  gem 'guard-sass'
 end
 
 group :development, :test do  
