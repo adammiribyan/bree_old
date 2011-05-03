@@ -40,14 +40,9 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-    @category = Category.find(params[:id])
+    @category = Category.find(params[:id])    
+    @category.destroy   
     
-    if @category.destroy
-      if @category.parent.present?
-        redirect_to(@category.parent)
-      else
-        redirect_to(categories_url)
-      end
-    end    
+    respond_to :js
   end  
 end

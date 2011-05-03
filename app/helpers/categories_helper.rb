@@ -7,7 +7,7 @@ module CategoriesHelper
     end
   end
   
-  def render_child_categories
+  def child_categories
     if @category.has_children?
       @categories = @category.children
       render @categories
