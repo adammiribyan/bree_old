@@ -29,6 +29,8 @@ GEM
       activesupport (= 3.0.4)
     activesupport (3.0.4)
     addressable (2.2.5)
+    ancestry (1.2.4)
+      activerecord (>= 2.2.2)
     arel (2.0.9)
     autotest-growl (0.2.9)
     autotest-standalone (4.5.5)
@@ -132,6 +134,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ancestry
   autotest-growl
   autotest-standalone
   capistrano

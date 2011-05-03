@@ -5,6 +5,8 @@ gem 'rails', '3.0.4'
 gem 'mysql2'
 gem 'unicode'
 
+gem 'ancestry'
+
 gem 'sass'
 gem 'simple_form'
 gem 'russian'
