@@ -2,7 +2,7 @@
 
 <h1 class="special">
   <%= @category.name.mb_chars.titleize.to_s %>
-  <div class="header-button"><%= link_to "Назад", categories_path %></div>
+  <div class="header-button"><%= link_to "Назад", parent_path %></div>
 </h1>
 
 <div class="liner">
@@ -13,38 +13,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>
-          <h3><a href="">Терапевтическая стоматология</a></h3>
-          <p class="description">
-            На следующей неделе у нас будет время спокойно побеседовать в нашем расширяющемся офисе.
-          </p>
-        </td>
-        <td>
-          <div class="controls">          
-            <span class="delete">
-              <%= link_to content_tag(:span, "", :class => "icon"), "", :confirm => 'Вы уверены?', :method => :delete %>
-            </span>
-            <%= link_to "Правка", "", :class => "admin" %>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <h3><a href="">Имплантология</a></h3>
-          <p class="description">
-            На следующей неделе у нас будет время спокойно побеседовать в нашем расширяющемся офисе.
-          </p>
-        </td>
-        <td>
-          <div class="controls">          
-            <span class="delete">
-              <%= link_to content_tag(:span, "", :class => "icon"), "", :confirm => 'Вы уверены?', :method => :delete %>
-            </span>
-            <%= link_to "Правка", "", :class => "admin" %>
-          </div>
-        </td>
-      </tr>      
+      <%= render_child_categories %>      
     </tbody>
   </table>
   
@@ -137,7 +106,7 @@
 <% content_for(:sidebar) { %>
   <div class="button-to-add-new-wrap clearfix">
     <span class="button">
-      <%= link_to content_tag(:span, "Новая категория"), new_category_path %>
+      <%= link_to content_tag(:span, "Новая категория"), new_category_path(:parent_id => @category) %>
     </span>
   </div>
   

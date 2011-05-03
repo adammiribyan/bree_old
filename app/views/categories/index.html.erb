@@ -10,20 +10,7 @@
       </tr>
     </thead>
     <tbody>
-    <% @categories.each do |category| %>
-      <tr>
-        <td>
-          <h3><%= link_to category.name.mb_chars.titleize.to_s, category %></h3>
-          <p class="description"><%= category.description %></p>
-        </td>
-        <td>
-          <div class="controls">          
-            <%= link_to_delete category %>
-            <%= link_to_edit "category", category %>
-          </div>
-        </td>
-      </tr>
-    <% end %>
+      <%= render @categories %>
     </tbody>
   </table>
 </div>

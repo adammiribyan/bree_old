@@ -4,7 +4,7 @@ class Category < ActiveRecord::Base
   validates :name, :presence => true
   
   def roots
-    self.root == 0
+    self.is_root? == true
   end
   
 end

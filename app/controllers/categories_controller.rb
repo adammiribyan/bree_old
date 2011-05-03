@@ -4,11 +4,15 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:id])
+    @category = Category.find(params[:id])    
   end
 
   def new
-    @category = Category.new
+    if params[:parent_id].present?
+      @parent_category = Category.find(params[:parent_id])
+    end
+    
+    @category = Category.new(:parent_id => params[:parent_id])    
   end
 
   def edit
@@ -37,8 +41,13 @@ class CategoriesController < ApplicationController
 
   def destroy
     @category = Category.find(params[:id])
+    
     if @category.destroy
-      redirect_to(categories_url)
+      if @category.parent.present?
+        redirect_to(@category.parent)
+      else
+        redirect_to(categories_url)
+      end
     end    
   end  
 end

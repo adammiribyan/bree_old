@@ -843,6 +843,17 @@ body.form {
     #patient_middle_name,
     #category_name { font-size: 1.5em; }
     
+    .parent-category {
+      font-size: 1.0833em;
+      color: #222;
+      text-overflow: ellipsis;
+      
+      span {
+        background-color: #ffffcc;
+        padding: 2px 4px;
+      }
+    }
+    
     .input {
       padding-bottom: 16px;
     }
@@ -948,6 +959,13 @@ table#services {
   
   tbody {
     tr {
+      &.notice {
+        p {
+          text-align: center !important;
+          font-style: italic;
+        }
+      }
+      
       &:last-child {
         td {
           border-bottom: none;
@@ -1024,3 +1042,5 @@ table#services {
     width: 65% !important;
   }
 }
+
+.nobr { white-space: nowrap; }

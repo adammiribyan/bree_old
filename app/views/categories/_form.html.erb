@@ -1,4 +1,6 @@
 <%= simple_form_for(@category) do |f| %>
+  <%= parent_category_name %>
+  
   <fieldset>
     <%= f.input :name, :label => "Название", :autofocus => focus_only_new %>
   </fieldset>
@@ -8,6 +10,7 @@
   </fieldset>
   
   <div class="actions">
+    <%= f.input :parent_id, :as => :hidden %>
     <%= f.submit "Сохранить" %> или <%= link_to "вернуться назад", :back, :class => "admin" %>
   </div>
 <% end %>

@@ -680,6 +680,13 @@ body.form .simple_form {
   body.form .simple_form #patient_middle_name,
   body.form .simple_form #category_name {
     font-size: 1.5em; }
+  body.form .simple_form .parent-category {
+    font-size: 1.0833em;
+    color: #222;
+    text-overflow: ellipsis; }
+    body.form .simple_form .parent-category span {
+      background-color: #ffffcc;
+      padding: 2px 4px; }
   body.form .simple_form .input {
     padding-bottom: 16px; }
   body.form .simple_form .hint {
@@ -750,6 +757,10 @@ table#services {
   table#categories tfoot td,
   table#services tfoot td {
     padding: 0.833em 0.417em; }
+  table#categories tbody tr.notice p,
+  table#services tbody tr.notice p {
+    text-align: center !important;
+    font-style: italic; }
   table#categories tbody tr:last-child td,
   table#services tbody tr:last-child td {
     border-bottom: none; }
@@ -803,3 +814,6 @@ table#services {
 
 table#services td:first-child {
   width: 65% !important; }
+
+.nobr {
+  white-space: nowrap; }
