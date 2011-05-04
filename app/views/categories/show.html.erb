@@ -34,76 +34,7 @@
       </tr>
     </tfoot>
     <tbody>
-      <tr>
-        <td><p>Лингвальные брекеты</p></td>
-        <td><p class="price"><%= number_to_currency "15000" %></p></td>
-        <td>
-          <div class="controls">          
-            <span class="delete">
-              <%= link_to content_tag(:span, "", :class => "icon"), "", :confirm => 'Вы уверены?', :method => :delete %>
-            </span>
-            <%= link_to "Правка", "", :class => "admin" %>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td><p>Смешные брекеты</p></td>
-        <td><p class="price"><%= number_to_currency "10000" %></p></td>
-        <td>
-          <div class="controls">          
-            <span class="delete">
-              <%= link_to content_tag(:span, "", :class => "icon"), "", :confirm => 'Вы уверены?', :method => :delete %>
-            </span>
-            <%= link_to "Правка", "", :class => "admin" %>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td><p>Очень серьезные брекеты</p></td>
-        <td><p class="price"><%= number_to_currency "56000" %></p></td>
-        <td>
-          <div class="controls">          
-            <span class="delete">
-              <%= link_to content_tag(:span, "", :class => "icon"), "", :confirm => 'Вы уверены?', :method => :delete %>
-            </span>
-            <%= link_to "Правка", "", :class => "admin" %>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td><p>Назальные брекеты</p></td>
-        <td><p class="price"><%= number_to_currency "2000" %></p></td>
-        <td>
-          <div class="controls">
-            <%= link_to_delete @category %>
-            <%= link_to_edit "category", @category %>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td><p>Красные брекеты</p></td>
-        <td><p class="price"><%= number_to_currency "13000" %></p></td>
-        <td>
-          <div class="controls">          
-            <span class="delete">
-              <%= link_to content_tag(:span, "", :class => "icon"), "", :confirm => 'Вы уверены?', :method => :delete %>
-            </span>
-            <%= link_to "Правка", "", :class => "admin" %>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td><p>Огромные брекеты</p></td>
-        <td><p class="price"><%= number_to_currency "6000" %></p></td>
-        <td>
-          <div class="controls">          
-            <span class="delete">
-              <%= link_to content_tag(:span, "", :class => "icon"), "", :confirm => 'Вы уверены?', :method => :delete %>
-            </span>
-            <%= link_to "Правка", "", :class => "admin" %>
-          </div>
-        </td>
-      </tr>
+      <%= services %>
     </tbody>    
   </table>
 </div>

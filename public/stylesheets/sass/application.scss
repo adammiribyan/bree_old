@@ -1061,6 +1061,10 @@ table#services {
       .simple_form {        
         margin: 0 0.75em;
         
+        .actions {
+          margin-top: 0 !important;
+        }
+        
         textarea#service_name {
           height: 3em;
         }

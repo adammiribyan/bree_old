@@ -16,6 +16,14 @@ module CategoriesHelper
     end
   end
   
+  def services
+    if @category.services.any?
+      render @category.services
+    else
+      render "services/blank_state"
+    end
+  end
+  
   def parent_path
     if @category.parent.present?
       @category.parent

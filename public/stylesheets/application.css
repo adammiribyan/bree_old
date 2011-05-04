@@ -828,6 +828,8 @@ table#services tr#new_service_form td {
   overflow: hidden; }
   table#services tr#new_service_form td .simple_form {
     margin: 0 0.75em; }
+    table#services tr#new_service_form td .simple_form .actions {
+      margin-top: 0 !important; }
     table#services tr#new_service_form td .simple_form textarea#service_name {
       height: 3em; }
     table#services tr#new_service_form td .simple_form input#service_price {
