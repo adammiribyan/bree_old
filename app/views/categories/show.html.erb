@@ -29,18 +29,7 @@
       </tr>
       <tr id="new_service_form">
         <td colspan="3">
-          <%= simple_form_for(@service) do |f| %>
-            
-            <fieldset class="last-child">
-              <%= f.input :name, :label => "Название", :autofocus => true %>
-              <%= f.input :price, :label => "Цена" %>              
-            </fieldset>
-          
-            <div class="actions">
-              <%= f.input :category_id, :as => :hidden %>
-              <%= f.submit "Сохранить" %> или <%= link_to "вернуться назад", :back, :class => "admin" %>
-            </div>
-          <% end %>
+          <%= render "services/form" %>
         </td>
       </tr>
     </tfoot>

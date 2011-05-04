@@ -1,13 +1,11 @@
-<%= simple_form_for(@service) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="inputs">
-    <%= f.input :name %>
-    <%= f.input :price %>
-    <%= f.input :category_id %>
-  </div>
-
+<%= simple_form_for(@service) do |f| %>            
+  <fieldset class="last-child">
+    <%= f.input :name, :label => "Название", :autofocus => true %>
+    <%= f.input :price, :label => "Цена" %>              
+  </fieldset>
+  
   <div class="actions">
-    <%= f.button :submit %>
+    <%= f.input :category_id, :as => :hidden %>
+    <%= f.submit "Сохранить" %> или <%= link_to "вернуться назад", :back, :class => "admin" %>
   </div>
 <% end %>
