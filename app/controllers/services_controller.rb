@@ -36,10 +36,9 @@ class ServicesController < ApplicationController
   end
 
   def destroy
-    @service = Service.find(params[:id])
+    @service = Service.find(params[:id])    
+    @service.destroy    
     
-    if @service.destroy
-      redirect_to(@service.category)
-    end
-  end
+    respond_to :js
+  end  
 end
