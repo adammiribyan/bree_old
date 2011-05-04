@@ -19,10 +19,10 @@ class ServicesController < ApplicationController
     @service = Service.new(params[:service])
     
     if @service.save
-      redirect_to(@service.category, :notice => "Service was successfully created.")
-    else
-      render :action => "new"
+      @services = Service.all
     end
+    
+    respond_to :js
   end
 
   def update

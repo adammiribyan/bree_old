@@ -1,0 +1,4 @@
+$(":input:not(input[type=submit])").val("");
+$("#services tbody").html("<%= escape_javascript(render @services) %>");
+$("#services tbody tr:last-child").effect("highlight", {}, 900);
+$("#services .simple_form #service_name").focus();
