@@ -12,11 +12,7 @@ module CategoriesHelper
       @categories = @category.children
       render @categories
     else
-      content_tag :tr, :class => "notice" do
-        content_tag :td do
-          content_tag :p, "Вы можете добавить дочернюю категорию, нажав на кнопку <span class=\"nobr\">«Новая категория».</span>".html_safe     
-        end
-      end
+      render "blank_state"
     end
   end
   
