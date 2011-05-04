@@ -1,4 +1,6 @@
 Bree::Application.routes.draw do
+  resources :services
+
   resources :categories
 
   get "teeth_charts/update"

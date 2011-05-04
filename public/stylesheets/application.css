@@ -472,6 +472,10 @@ a.admin {
   font-size: 12px;
   font-weight: normal;
   padding: 1px; }
+  a.admin.selected {
+    background-color: red;
+    color: white !important;
+    text-decoration: none; }
   a.admin:link, a.admin:visited {
     color: red; }
   a.admin:hover {
@@ -748,7 +752,7 @@ table#services {
   empty-cells: show; }
   table#categories thead th h2,
   table#services thead th h2 {
-    background: #E9E9E9;
+    background-color: #E9E9E9;
     font-size: 1.333em;
     font-weight: bold;
     line-height: 1;
@@ -814,6 +818,21 @@ table#services {
 
 table#services td:first-child {
   width: 65% !important; }
+table#services tr#new_service_form td {
+  background-color: #E9E9E9;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  -webkit-box-shadow: 0 1px 3px #999;
+  -moz-box-shadow: 0 1px 3px #999;
+  box-shadow: 0 1px 3px #999;
+  overflow: hidden; }
+  table#services tr#new_service_form td .simple_form {
+    margin: 0 0.75em; }
+    table#services tr#new_service_form td .simple_form textarea#service_name {
+      height: 3em; }
+    table#services tr#new_service_form td .simple_form input#service_price {
+      font-size: 1.5em;
+      width: 6em; }
 
 .nobr {
   white-space: nowrap; }

@@ -526,6 +526,12 @@ a.admin {
   font-weight: normal;
   padding: 1px;
   
+  &.selected {
+    background-color: red;
+    color: white !important;
+    text-decoration: none;
+  }
+  
   &:link,
   &:visited {
     color: red;    
@@ -941,7 +947,7 @@ table#services {
   thead {
     th {
       h2 {
-        background: #E9E9E9;
+        background-color: #E9E9E9;
         font-size: 1.333em;
         font-weight: bold;
         line-height: 1;
@@ -1040,6 +1046,31 @@ table#services {
 table#services {
   td:first-child {
     width: 65% !important;
+  }
+  
+  tr#new_service_form {
+    td {
+      background-color: #E9E9E9;
+      -moz-border-radius: 1px;
+      border-radius: 1px;
+      -webkit-box-shadow: 0 1px 3px #999;
+      -moz-box-shadow: 0 1px 3px #999;
+      box-shadow: 0 1px 3px #999;
+      overflow: hidden;
+      
+      .simple_form {        
+        margin: 0 0.75em;
+        
+        textarea#service_name {
+          height: 3em;
+        }
+        
+        input#service_price {
+          font-size: 1.5em;
+          width: 6em;
+        }
+      }
+    }
   }
 }
 
