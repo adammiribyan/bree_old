@@ -14,4 +14,13 @@ $(function() {
 		if (event.keyCode == Event.KEY_TAB) return;
 		$("label[for="+ this.id +"]").hide();
 	});
+  
+  /* new service form toggle */
+  $("#services tfoot #new_service_form_link").click(function(event) {
+    event.preventDefault();
+    
+    $("#services tfoot tr#service_form").toggle();
+    $("#services tfoot #new_service_form_link").toggleClass("selected");    
+  });
+  
 })
