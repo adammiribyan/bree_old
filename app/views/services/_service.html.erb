@@ -6,7 +6,7 @@
       <span class="delete">
         <%= link_to content_tag(:span, "", :class => "icon"), service, :confirm => 'Вы уверены?', :method => :delete, :remote => true %>
       </span>
-      <%= link_to "Правка", edit_service_path(service), :class => "admin" %>
+      <%= link_to "Правка", edit_service_path(service), :class => "admin", :remote => true %>
     </div>
   </td>
 </tr>  

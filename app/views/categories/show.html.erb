@@ -27,10 +27,8 @@
       <tr>
         <td colspan="3"><%= link_to "Добавить услугу", "", :class => "admin selected" %></td>
       </tr>
-      <tr id="new_service_form">
-        <td colspan="3">
-          <%= render "services/form" %>
-        </td>
+      <tr class="service_form">
+        <%= render "services/form" %>
       </tr>
     </tfoot>
     <tbody>

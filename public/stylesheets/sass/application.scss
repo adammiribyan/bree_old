@@ -1047,32 +1047,32 @@ table#services {
   td:first-child {
     width: 65% !important;
   }
-  
-  tr#new_service_form {
-    td {
-      background-color: #E9E9E9;
-      -moz-border-radius: 1px;
-      border-radius: 1px;
-      -webkit-box-shadow: 0 1px 3px #999;
-      -moz-box-shadow: 0 1px 3px #999;
-      box-shadow: 0 1px 3px #999;
-      overflow: hidden;
+ 
+  td.service_form {
+    font-size: 1em;
+    background-color: #E9E9E9;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+    -webkit-box-shadow: 0 1px 3px #999;
+    -moz-box-shadow: 0 1px 3px #999;
+    box-shadow: 0 1px 3px #999;
+    overflow: hidden;
+    text-align: left !important;
+    
+    .simple_form {        
+      margin: 0 0.75em;
       
-      .simple_form {        
-        margin: 0 0.75em;
-        
-        .actions {
-          margin-top: 0 !important;
-        }
-        
-        textarea#service_name {
-          height: 3em;
-        }
-        
-        input#service_price {
-          font-size: 1.5em;
-          width: 6em;
-        }
+      .actions {
+        margin-top: 0 !important;
+      }
+      
+      textarea#service_name {
+        height: 3em;
+      }
+      
+      input#service_price {
+        font-size: 1.5em;
+        width: 6em;
       }
     }
   }

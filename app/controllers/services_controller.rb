@@ -1,4 +1,4 @@
-class ServicesController < ApplicationController
+class ServicesController < ApplicationController  
   def index
     @services = Service.all
   end
@@ -12,14 +12,16 @@ class ServicesController < ApplicationController
   end
 
   def edit
-    @service = Service.find(params[:id])
+    @service = Service.find(params[:id])    
+    
+    respond_to :js
   end
 
   def create
     @service = Service.new(params[:service])
     
     if @service.save
-      @services = Service.all
+      @services = Service.where(:category_id => params[:service][:category_id])
     end
     
     respond_to :js
@@ -29,10 +31,10 @@ class ServicesController < ApplicationController
     @service = Service.find(params[:id])
     
     if @service.update_attributes(params[:service])
-      redirect_to(@service.category, :notice => "Service was successfully updated.")
-    else
-      render :action => "edit"
-    end    
+      @services = Service.where(:category_id => params[:service][:category_id])
+    end  
+    
+    respond_to :js
   end
 
   def destroy
@@ -40,5 +42,5 @@ class ServicesController < ApplicationController
     @service.destroy    
     
     respond_to :js
-  end  
+  end
 end
