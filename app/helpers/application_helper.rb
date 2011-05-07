@@ -24,6 +24,17 @@ module ApplicationHelper
     end
   end  
   
+  def submit_label
+    case @controller.action_name
+      when "new" 
+        "Добавить"
+      when "edit" 
+        "Изменить"
+      else
+        "Сохранить"
+    end
+  end
+  
   def link_to_delete(object)
     content_tag :span, :class => "delete" do
       link_to content_tag(:span, "", :class => "icon"), object, :confirm => 'Вы уверены?', :method => :delete
