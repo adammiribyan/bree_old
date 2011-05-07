@@ -23,4 +23,22 @@ $(function() {
     $("#services tfoot #new_service_form_link").toggleClass("selected");    
   });
   
+  // Doctors
+  // show/hide the photo upload field and hide/show all other
+  $("#switch_to_photo").click(function(event) {
+    event.preventDefault();
+    $(".hide_while_photo").hide();
+    $("#patient_photo_form").fadeIn();
+  });
+  
+  $("#switch_to_data").click(function(event) {
+    event.preventDefault();
+    $(".hide_while_photo").fadeIn();
+    $("#patient_photo_form").hide();
+  });
+  
+  $("input[type='file']").change(function() {
+    $(".dots").show();
+    $(".cancel").hide();
+  });
 })

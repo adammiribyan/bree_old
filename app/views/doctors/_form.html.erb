@@ -1,9 +1,8 @@
 <%= simple_form_for(@doctor) do |f| %>
-
   <% unless @controller.action_name == "new" %>
     <div id="patient_photo"> <!-- todo: replace with a div_for helper -->
       <%= image_tag "avatar.png", :width => "65", :height => "65" %>
-      <%= link_to "Изменить", "", :class => "admin" %>
+      <%= link_to "Изменить", "", :class => "admin hide_while_photo", :id => "switch_to_photo" %>
     </div>
     
     <% content_for(:sidebar) { %>  
@@ -15,14 +14,14 @@
     <% } %>
   <% end %>
 
-  <fieldset class="<%= float_to_right_unless_new %>">
+  <fieldset class="<%= float_to_right_unless_new %> hide_while_photo">
     <%= f.input :last_name, :label => "Фамилия", :autofocus => true %>
     <%= f.input :first_name, :label => "Имя" %>
     <%= f.input :middle_name, :label => "Отчество" %>
     <%= f.input :title, :label => "Должность", :hint => "Хирург, имплантолог, медсестра…" %>
   </fieldset>
 
-  <fieldset class="<%= float_to_right_unless_new %> last-child">
+  <fieldset class="<%= float_to_right_unless_new %> last-child hide_while_photo">
     <%= f.input :birth_date, :as => :date, :start_year => Date.today.year - 90,
                                 :end_year => Date.today.year - 6,
                                 :order => [:day, :month, :year], :label => "Дата рождения",
@@ -31,9 +30,18 @@
     <%= f.input :email, :label => "Электропочта" %>    
   </fieldset>
   
-  <div class="clear"></div>
+  <div class="clear hide_while_photo"></div>
 
-  <div class="actions">
+  <div class="actions hide_while_photo">
     <%= f.submit submit_label %> или <%= link_to "вернуться назад", :back, :class => "admin" %>
   </div>
 <% end %>
+
+<form action="/" class="simple_form" method="post" id="patient_photo_form" style="display: none;">
+  <fieldset class="<%= float_to_right_unless_new %> last-child">
+    <h3>Изменить фотографию</h3>
+    <div><%= image_tag "dots-white.gif", :class => "dots" %></div>
+    <%= file_field(:doctor, :phone_number) %>
+    <p class="cancel">или <%= link_to "вернуться назад", :back, :class => "admin", :id => "switch_to_data" %></p>
+  </fieldset>
+</form>  

@@ -752,6 +752,16 @@ body.form .simple_form {
     padding-top: 13px;
     padding-left: 2px; }
 
+#patient_photo_form h3 {
+  font-size: 1.333em;
+  font-weight: normal;
+  margin: 0 0 0.75em;
+  line-height: 1; }
+#patient_photo_form input[type="file"] {
+  margin: 1.1666em 0 0.75em; }
+#patient_photo_form .dots {
+  display: none; }
+
 .clearfix:before, .clearfix:after {
   content: "\0020";
   display: block;

@@ -854,7 +854,7 @@ body.form {
     #doctor_first_name,
     #doctor_last_name,
     #doctor_middle_name,
-    #category_name { font-size: 1.5em; }
+    #category_name { font-size: 1.5em; }  
     
     #patient_photo {
       float: left;
@@ -932,6 +932,24 @@ body.form {
       padding-top: 13px;
       padding-left: 2px;
     }
+  }
+}
+
+// Tiny form for a doctor's photo
+#patient_photo_form {
+  h3 {
+    font-size: 1.333em;
+    font-weight: normal;
+    margin: 0 0 0.75em;      
+    line-height: 1;
+  }  
+  
+  input[type="file"] {
+    margin: 1.1666em 0 0.75em;
+  }
+  
+  .dots {
+    display: none;
   }
 }
 
