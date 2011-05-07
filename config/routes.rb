@@ -1,4 +1,6 @@
 Bree::Application.routes.draw do
+  resources :doctors
+
   resources :services
 
   resources :categories
