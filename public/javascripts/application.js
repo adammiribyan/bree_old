@@ -37,7 +37,7 @@ $(function() {
     $("#patient_photo_form").hide();
   });
   
-  $("input[type='file']").change(function() {
+  $("#doctor_photo").change(function() {
     $(".dots").show();
     $(".cancel").hide();
     
