@@ -416,7 +416,7 @@ ul.navigation-tabs {
   text-decoration: none; }
 
 .special {
-  background-color: #F1F8FE !important; }
+  background-color: #f1f8fe !important; }
 
 .header-button {
   background: url("/images/btn-back.png") no-repeat center;
@@ -756,10 +756,10 @@ body.form .simple_form {
   display: none; }
   #patient_photo_form h3 {
     font-size: 1.333em;
-    font-weight: normal;
+    font-weight: bold;
     margin: 0 0 0.75em;
     line-height: 1; }
-  #patient_photo_form input[type="file"] {
+  #patient_photo_form #doctor_photo {
     margin: 1.1666em 0 0.75em; }
   #patient_photo_form .dots {
     display: none; }
