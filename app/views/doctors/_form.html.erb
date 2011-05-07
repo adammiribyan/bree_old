@@ -1,16 +1,25 @@
 <%= simple_form_for(@doctor) do |f| %>
-  <%= f.error_notification %>
 
-  <div class="inputs">
-    <%= f.input :first_name %>
-    <%= f.input :middle_name %>
-    <%= f.input :last_name %>
-    <%= f.input :title %>
-    <%= f.input :email %>
-    <%= f.input :phone_number %>
+  <div id="patient_photo" class="photo">
+    <%= image_tag "doctor-tmp.jpg", :width => "80", :height => "80" %>
+    <%= link_to "Изменить", "", :class => "admin" %>
   </div>
 
+  <fieldset class="small right">
+    <%= f.input :last_name, :label => "Фамилия", :autofocus => focus_only_new %>
+    <%= f.input :first_name, :label => "Имя" %>
+    <%= f.input :middle_name, :label => "Отчество" %>
+    <%= f.input :title, :label => "Должность" %>
+  </fieldset>
+
+  <fieldset class="small right last-child">
+    <%= f.input :phone_number, :label => "Телефон" %>
+    <%= f.input :email, :label => "Электропочта" %>    
+  </fieldset>
+  
+  <div class="clear"></div>
+
   <div class="actions">
-    <%= f.button :submit %>
+    <%= f.submit "Сохранить" %> или <%= link_to "вернуться назад", :back, :class => "admin" %>
   </div>
 <% end %>

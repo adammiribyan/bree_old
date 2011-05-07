@@ -838,16 +838,48 @@ body.form {
         margin-bottom: 0;
       }
       
+      &.small { 
+        width: 78%; 
+        
+        .string,
+        .numeric,
+        .text,
+        .password {
+          input, textarea { width: 68% !important; }
+        }
+          
+      }
+      &.right { float: right; }
+      &.left { float: left; }
+      
       width: 100%;
       border-bottom: 1px dashed #ededed;    
       padding: 10px 0px;
       margin-bottom: 10px;
-    }
+    }    
     
     #patient_first_name,
     #patient_last_name,
     #patient_middle_name,
+    #doctor_first_name,
+    #doctor_last_name,
+    #doctor_middle_name,
     #category_name { font-size: 1.5em; }
+    
+    #patient_photo {
+      float: left;
+      text-align: center;
+      display: block;
+      width: 90px;
+      margin: 10px 10px 0 0;
+      
+      img {
+        display: block;
+        margin-bottom: 0.4166em;
+        border: 6px solid #ededef;
+        border-radius: 1px;
+      }
+    }
     
     .parent-category {
       font-size: 1.0833em;
@@ -1081,3 +1113,7 @@ table#services {
 }
 
 .nobr { white-space: nowrap; }
+.clear { 
+  clear: both; 
+  display: block;
+}

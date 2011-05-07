@@ -679,11 +679,39 @@ body.form .simple_form {
     body.form .simple_form fieldset.last-child {
       border-bottom: none;
       margin-bottom: 0; }
+    body.form .simple_form fieldset.small {
+      width: 78%; }
+      body.form .simple_form fieldset.small .string input, body.form .simple_form fieldset.small .string textarea,
+      body.form .simple_form fieldset.small .numeric input,
+      body.form .simple_form fieldset.small .numeric textarea,
+      body.form .simple_form fieldset.small .text input,
+      body.form .simple_form fieldset.small .text textarea,
+      body.form .simple_form fieldset.small .password input,
+      body.form .simple_form fieldset.small .password textarea {
+        width: 68% !important; }
+    body.form .simple_form fieldset.right {
+      float: right; }
+    body.form .simple_form fieldset.left {
+      float: left; }
   body.form .simple_form #patient_first_name,
   body.form .simple_form #patient_last_name,
   body.form .simple_form #patient_middle_name,
+  body.form .simple_form #doctor_first_name,
+  body.form .simple_form #doctor_last_name,
+  body.form .simple_form #doctor_middle_name,
   body.form .simple_form #category_name {
     font-size: 1.5em; }
+  body.form .simple_form #patient_photo {
+    float: left;
+    text-align: center;
+    display: block;
+    width: 90px;
+    margin: 10px 10px 0 0; }
+    body.form .simple_form #patient_photo img {
+      display: block;
+      margin-bottom: 0.4166em;
+      border: 6px solid #ededef;
+      border-radius: 1px; }
   body.form .simple_form .parent-category {
     font-size: 1.0833em;
     color: #222;
@@ -842,3 +870,7 @@ table#services td.service_form {
 
 .nobr {
   white-space: nowrap; }
+
+.clear {
+  clear: both;
+  display: block; }
