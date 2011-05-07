@@ -1,33 +1,19 @@
-<h1>Listing doctors</h1>
+<% title "Врачи" %>
 
-<table>
-  <tr>
-    <th>First name</th>
-    <th>Middle name</th>
-    <th>Last name</th>
-    <th>Title</th>
-    <th>Email</th>
-    <th>Phone number</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<h1 class="special">Врачи</h1>
 
-<% @doctors.each do |doctor| %>
-  <tr>
-    <td><%= doctor.first_name %></td>
-    <td><%= doctor.middle_name %></td>
-    <td><%= doctor.last_name %></td>
-    <td><%= doctor.title %></td>
-    <td><%= doctor.email %></td>
-    <td><%= doctor.phone_number %></td>
-    <td><%= link_to 'Show', doctor %></td>
-    <td><%= link_to 'Edit', edit_doctor_path(doctor) %></td>
-    <td><%= link_to 'Destroy', doctor, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+<div id="doctors">
+  <ul>
+    <%= render @doctors %>
+  </ul>
+</div>
 
-<br />
-
-<%= link_to 'New Doctor', new_doctor_path %>
+<% content_for(:sidebar) { %>
+  <div class="button-to-add-new-wrap clearfix">
+    <span class="button">
+      <%= link_to content_tag(:span, "Новый врач"), new_doctor_path %>
+    </span>
+  </div>
+  
+  <%= render "sidebar" %>
+<% } %>

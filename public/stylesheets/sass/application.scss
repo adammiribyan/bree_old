@@ -838,17 +838,7 @@ body.form {
         margin-bottom: 0;
       }
       
-      &.small { 
-        width: 78%; 
-        
-        .string,
-        .numeric,
-        .text,
-        .password {
-          input, textarea { width: 68% !important; }
-        }
-          
-      }
+      &.small { width: 80%; }
       &.right { float: right; }
       &.left { float: left; }
       
@@ -871,13 +861,13 @@ body.form {
       text-align: center;
       display: block;
       width: 90px;
-      margin: 10px 10px 0 0;
+      margin: 5px 5px 0 0;
       
       img {
         display: block;
-        margin-bottom: 0.4166em;
         border: 6px solid #ededef;
         border-radius: 1px;
+        margin: 0.4166em auto;
       }
     }
     
@@ -1107,6 +1097,68 @@ table#services {
       input#service_price {
         font-size: 1.5em;
         width: 6em;
+      }
+    }
+  }
+}
+
+#doctors {
+  position: relative;
+  display: block;  
+  padding: 0.5em 0.5em 1em 1.9166em;
+  
+  &>ul {
+    display: block;
+    position: relative;
+        
+    &>li {
+      display: inline-block;
+      padding: 1.4166em 1.4166em 0 0;
+      width: 47%;
+      vertical-align: top;
+      line-height: 1.4;      
+      
+      ul.data {
+        position: relative;
+        display: block;
+        margin-left: 65px;
+        width: 100%;
+        
+        li {
+          display: block;
+        }
+      }
+      
+      .title {
+        font-size: 0.9166em;
+        color: #888;
+        margin-bottom: 0.1666em;
+      }
+      
+      h3 {
+        font-size: 1.0833em;
+        font-weight: bold;
+        line-height: 1.5;
+        margin: 0;
+      }
+      
+      span {
+        display: block;
+      }
+      
+      a.email {
+        &:hover {
+          background-color: -webkit-link;
+          color: white;
+          padding: 1px;
+          text-decoration: none;
+        }
+      }
+      
+      img {
+        float: left;
+        margin-right: 0.4166em;
+        margin-bottom: 3em;
       }
     }
   }

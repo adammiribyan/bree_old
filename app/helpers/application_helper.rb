@@ -10,7 +10,8 @@ module ApplicationHelper
     
     if controller.action_name == "new"  || 
        controller.action_name == "edit" || 
-       controller.controller_name == "categories"
+       controller.controller_name == "categories" ||
+      controller.controller_name == "doctors"
       
       @body_classes << "form"
     end

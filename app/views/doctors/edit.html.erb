@@ -1,6 +1,12 @@
-<h1>Editing doctor</h1>
+<% title "Редактирование врача" %>
 
-<%= render 'form' %>
+<h1 class="special">Редактирование врача</h1>
 
-<%= link_to 'Show', @doctor %> |
-<%= link_to 'Back', doctors_path %>
+<div class="liner">
+  <%= render "form" %>
+</div>
+
+<% content_for(:sidebar) { %>  
+  <%= render "sidebar" %>
+<% } %>
+

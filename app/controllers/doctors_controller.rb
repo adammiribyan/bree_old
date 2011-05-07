@@ -1,22 +1,12 @@
 class DoctorsController < ApplicationController
-  # GET /doctors
-  # GET /doctors.xml
   def index
     @doctors = Doctor.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @doctors }
-    end
   end
 
-  # GET /doctors/1
-  # GET /doctors/1.xml
   def show
     @doctor = Doctor.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
       format.xml  { render :xml => @doctor }
     end
   end
@@ -29,47 +19,31 @@ class DoctorsController < ApplicationController
     @doctor = Doctor.find(params[:id])
   end
 
-  # POST /doctors
-  # POST /doctors.xml
   def create
     @doctor = Doctor.new(params[:doctor])
-
-    respond_to do |format|
-      if @doctor.save
-        format.html { redirect_to(@doctor, :notice => 'Doctor was successfully created.') }
-        format.xml  { render :xml => @doctor, :status => :created, :location => @doctor }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @doctor.errors, :status => :unprocessable_entity }
-      end
+    
+    if @doctor.save
+      redirect_to(doctors_url, :notice => "Doctor was successfully created.")
+    else
+      render :action => "new"
     end
   end
 
-  # PUT /doctors/1
-  # PUT /doctors/1.xml
   def update
     @doctor = Doctor.find(params[:id])
-
-    respond_to do |format|
-      if @doctor.update_attributes(params[:doctor])
-        format.html { redirect_to(@doctor, :notice => 'Doctor was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @doctor.errors, :status => :unprocessable_entity }
-      end
-    end
+    
+    if @doctor.update_attributes(params[:doctor])
+      redirect_to(doctors_url, :notice => "Doctor was successfully updated.")
+    else
+      render :action => "edit"
+    end    
   end
 
-  # DELETE /doctors/1
-  # DELETE /doctors/1.xml
   def destroy
     @doctor = Doctor.find(params[:id])
-    @doctor.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(doctors_url) }
-      format.xml  { head :ok }
+    
+    if @doctor.destroy
+      redirect_to(doctors_url)
     end
   end
 end

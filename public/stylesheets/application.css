@@ -680,15 +680,7 @@ body.form .simple_form {
       border-bottom: none;
       margin-bottom: 0; }
     body.form .simple_form fieldset.small {
-      width: 78%; }
-      body.form .simple_form fieldset.small .string input, body.form .simple_form fieldset.small .string textarea,
-      body.form .simple_form fieldset.small .numeric input,
-      body.form .simple_form fieldset.small .numeric textarea,
-      body.form .simple_form fieldset.small .text input,
-      body.form .simple_form fieldset.small .text textarea,
-      body.form .simple_form fieldset.small .password input,
-      body.form .simple_form fieldset.small .password textarea {
-        width: 68% !important; }
+      width: 80%; }
     body.form .simple_form fieldset.right {
       float: right; }
     body.form .simple_form fieldset.left {
@@ -706,12 +698,12 @@ body.form .simple_form {
     text-align: center;
     display: block;
     width: 90px;
-    margin: 10px 10px 0 0; }
+    margin: 5px 5px 0 0; }
     body.form .simple_form #patient_photo img {
       display: block;
-      margin-bottom: 0.4166em;
       border: 6px solid #ededef;
-      border-radius: 1px; }
+      border-radius: 1px;
+      margin: 0.4166em auto; }
   body.form .simple_form .parent-category {
     font-size: 1.0833em;
     color: #222;
@@ -867,6 +859,47 @@ table#services td.service_form {
     table#services td.service_form .simple_form input#service_price {
       font-size: 1.5em;
       width: 6em; }
+
+#doctors {
+  position: relative;
+  display: block;
+  padding: 0.5em 0.5em 1em 1.9166em; }
+  #doctors > ul {
+    display: block;
+    position: relative; }
+    #doctors > ul > li {
+      display: inline-block;
+      padding: 1.4166em 1.4166em 0 0;
+      width: 47%;
+      vertical-align: top;
+      line-height: 1.4; }
+      #doctors > ul > li ul.data {
+        position: relative;
+        display: block;
+        margin-left: 65px;
+        width: 100%; }
+        #doctors > ul > li ul.data li {
+          display: block; }
+      #doctors > ul > li .title {
+        font-size: 0.9166em;
+        color: #888;
+        margin-bottom: 0.1666em; }
+      #doctors > ul > li h3 {
+        font-size: 1.0833em;
+        font-weight: bold;
+        line-height: 1.5;
+        margin: 0; }
+      #doctors > ul > li span {
+        display: block; }
+      #doctors > ul > li a.email:hover {
+        background-color: -webkit-link;
+        color: white;
+        padding: 1px;
+        text-decoration: none; }
+      #doctors > ul > li img {
+        float: left;
+        margin-right: 0.4166em;
+        margin-bottom: 3em; }
 
 .nobr {
   white-space: nowrap; }
