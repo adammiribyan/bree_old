@@ -13,6 +13,9 @@
   </fieldset>
 
   <fieldset class="small right last-child">
+    <%= f.input :birth_date, :as => :date, :start_year => Date.today.year - 90,
+                                :end_year => Date.today.year - 6,
+                                :order => [:day, :month, :year], :label => "Дата рождения" %>
     <%= f.input :phone_number, :label => "Телефон" %>
     <%= f.input :email, :label => "Электропочта" %>    
   </fieldset>
