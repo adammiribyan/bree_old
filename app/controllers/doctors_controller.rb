@@ -21,18 +21,10 @@ class DoctorsController < ApplicationController
     end
   end
 
-  # GET /doctors/new
-  # GET /doctors/new.xml
   def new
     @doctor = Doctor.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @doctor }
-    end
   end
 
-  # GET /doctors/1/edit
   def edit
     @doctor = Doctor.find(params[:id])
   end

@@ -1,18 +1,20 @@
 <%= simple_form_for(@doctor) do |f| %>
 
-  <div id="patient_photo" class="photo">
-    <%= image_tag "doctor-tmp.jpg", :width => "80", :height => "80" %>
-    <%= link_to "Изменить", "", :class => "admin" %>
-  </div>
+  <% unless @controller.action_name == "new" %>
+    <div id="patient_photo"> <!-- todo: replace with a div_for helper -->
+      <%= image_tag "doctor-tmp.jpg", :width => "80", :height => "80" %>
+      <%= link_to "Изменить", "", :class => "admin" %>
+    </div>
+  <% end %>
 
-  <fieldset class="small right">
+  <fieldset class="<%= float_to_right_unless_new %>">
     <%= f.input :last_name, :label => "Фамилия", :autofocus => focus_only_new %>
     <%= f.input :first_name, :label => "Имя" %>
     <%= f.input :middle_name, :label => "Отчество" %>
     <%= f.input :title, :label => "Должность" %>
   </fieldset>
 
-  <fieldset class="small right last-child">
+  <fieldset class="<%= float_to_right_unless_new %> last-child">
     <%= f.input :birth_date, :as => :date, :start_year => Date.today.year - 90,
                                 :end_year => Date.today.year - 6,
                                 :order => [:day, :month, :year], :label => "Дата рождения" %>
