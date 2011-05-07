@@ -1,5 +1,5 @@
 <li id="<%= doctor.id %>">
-  <%= image_tag "avatar.png", :width => "60", :height => "60", :class => "photo" %>
+  <%= photo_of doctor %>
   <h3><%= doctor.full_name %></h3>
   <ul class="data">
     <li class="title"><%= doctor.title.mb_chars.titleize.to_s %></li>

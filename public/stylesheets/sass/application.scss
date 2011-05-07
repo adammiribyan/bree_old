@@ -937,6 +937,8 @@ body.form {
 
 // Tiny form for a doctor's photo
 #patient_photo_form {
+  display: none;
+  
   h3 {
     font-size: 1.333em;
     font-weight: normal;

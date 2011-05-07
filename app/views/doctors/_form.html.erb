@@ -1,7 +1,7 @@
 <%= simple_form_for(@doctor) do |f| %>
   <% unless @controller.action_name == "new" %>
     <div id="patient_photo"> <!-- todo: replace with a div_for helper -->
-      <%= image_tag "avatar.png", :width => "65", :height => "65" %>
+      <%= photo_of @doctor %>
       <%= link_to "Изменить", "", :class => "admin hide_while_photo", :id => "switch_to_photo" %>
     </div>
     
@@ -37,11 +37,11 @@
   </div>
 <% end %>
 
-<form action="/" class="simple_form" method="post" id="patient_photo_form" style="display: none;">
+<%= simple_form_for(@doctor, :html => { :multipart => true, :id => "patient_photo_form" }) do |f| %>
   <fieldset class="<%= float_to_right_unless_new %> last-child">
     <h3>Изменить фотографию</h3>
     <div><%= image_tag "dots-white.gif", :class => "dots" %></div>
-    <%= file_field(:doctor, :phone_number) %>
+    <%= file_field(:doctor, :photo) %>
     <p class="cancel">или <%= link_to "вернуться назад", :back, :class => "admin", :id => "switch_to_data" %></p>
-  </fieldset>
-</form>  
+  </fieldset> 
+<% end %>

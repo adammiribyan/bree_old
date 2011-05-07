@@ -40,5 +40,8 @@ $(function() {
   $("input[type='file']").change(function() {
     $(".dots").show();
     $(".cancel").hide();
+    
+    $("#patient_photo_form").submit();
+    return false;
   });
 })
