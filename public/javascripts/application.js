@@ -1,5 +1,5 @@
 $(function() {
-  /* magick search field */
+  /* magic search field */
   $(".overlay-wrap > input").attr("value", "")
   
   $(".overlay-wrap > input").focusin(function() {

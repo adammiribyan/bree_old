@@ -1,6 +1,6 @@
 class DoctorsController < ApplicationController
   def index
-    @doctors = Doctor.all
+    @doctors = Doctor.all    
   end
 
   def show
@@ -23,7 +23,7 @@ class DoctorsController < ApplicationController
     @doctor = Doctor.new(params[:doctor])
     
     if @doctor.save
-      redirect_to(doctors_url, :notice => "Doctor was successfully created.")
+      redirect_to(doctors_url, :flash => { :updated_id => @doctor.id }, :notice => "Doctor was successfully created.")
     else
       render :action => "new"
     end
@@ -33,7 +33,7 @@ class DoctorsController < ApplicationController
     @doctor = Doctor.find(params[:id])
     
     if @doctor.update_attributes(params[:doctor])
-      redirect_to(doctors_url, :notice => "Doctor was successfully updated.")
+      redirect_to(doctors_url, :flash => { :updated_id => @doctor.id }, :notice => "Doctor was successfully updated.")
     else
       render :action => "edit"
     end    

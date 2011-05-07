@@ -1,5 +1,5 @@
 <%= simple_form_for(@doctor) do |f| %>
-  <% unless @controller.action_name == "new" %>
+  <% unless controller.action_name == "new" %>
     <div id="patient_photo"> <!-- todo: replace with a div_for helper -->
       <%= photo_of @doctor %>
       <%= link_to "Изменить", "", :class => "admin hide_while_photo", :id => "switch_to_photo" %>
