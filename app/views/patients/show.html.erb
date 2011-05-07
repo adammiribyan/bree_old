@@ -36,26 +36,7 @@
       <%= render "comments/form" %>
     </div>
     <ul class="patient-notes">
-      <li id="note1">
-        <div class="type">
-          <a href="#">Комментарий</a>
-        </div>
-        <div class="content">
-          <span class="date">12 мая 2011</span>
-          <span class="doctor">Еременко О.</span>            
-          <p>Интервью с Сашей Берманом: как стать режиссером документального кино.</p>
-        </div>
-      </li>
-      <li id="note2">
-        <div class="type">
-          <a href="#">Комментарий</a>
-        </div>
-        <div class="content">
-          <span class="date">4 мая 2011</span>
-          <span class="doctor">Александрова С.</span>            
-          <p>Один из организаторов фестивалей национальго кино в 35 мм, член творческой группы Meet and Greet.</p>
-        </div>
-      </li>
+      <%= render @patient.comments.order("created_at desc") %>
     </ul>
   </div>  
 </div>

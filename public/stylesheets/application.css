@@ -340,7 +340,9 @@ h5 {
 .patient-notes-wrap .simple_form .input textarea {
   width: 100%;
   height: 6em;
-  display: block; }
+  display: block;
+  font-size: 1.1666em;
+  line-height: 1.5; }
 
 .patient-notes-wrap .simple_form .actions {
   margin-top: .75em;
@@ -348,7 +350,10 @@ h5 {
 
 .patient-notes-wrap ul.patient-notes li {
   border-top: 1px #ededed solid;
-  padding-top: 1.2857em; }
+  padding: 1.2857em 0 1.0833em; }
+  .patient-notes-wrap ul.patient-notes li .controls {
+    position: absolute;
+    right: 0; }
 
 .patient-notes-wrap ul.patient-notes li .type {
   float: left;
@@ -376,12 +381,12 @@ h5 {
 
 .patient-notes-wrap ul.patient-notes li .content .doctor {
   color: #888;
-  display: inline-block; }
+  display: none; }
 
 .patient-notes-wrap ul.patient-notes li .content p {
   font-size: 1.083em;
   line-height: 1.625;
-  margin: 1.083em 0; }
+  margin: 1.083em 0 0; }
 
 ul.navigation-tabs {
   position: relative;
@@ -419,7 +424,7 @@ ul.navigation-tabs {
   text-decoration: none; }
 
 .special {
-  background-color: #f1f8fe !important; }
+  background-color: #F1F8FE !important; }
 
 .header-button {
   background: url("/images/btn-back.png") no-repeat center;
@@ -500,7 +505,10 @@ a.admin {
       position: relative;
       top: 2px;
       display: block;
-      z-index: 1; }
+      z-index: 1;
+      opacity: 0.5; }
+      .controls .delete .icon:hover {
+        opacity: 1; }
 
 /* patient's teeth chart */
 .teeth-chart-wrap {

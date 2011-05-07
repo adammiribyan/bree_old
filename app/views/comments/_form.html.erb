@@ -1,11 +1,11 @@
-<%= simple_form_for(@comment) do |f| %>
+<%= simple_form_for(@comment, :remote => true) do |f| %>
   <fieldset>
   <%= f.input :body %>
   </fieldset>
 
   <div class="actions">
     <%= f.input :patient_id, :as => :hidden, :input_html => { :value => @patient.id} %>
-    <%= f.submit "Добавить комментарий" %>
+    <%= f.submit "Добавить комментарий", :disable_with => "Сохраняем... " %>
   </div>
 <% end %>
 
@@ -20,8 +20,6 @@
       $(this).css({opacity:1});
     },
     // Quite slow animation:
-    animateDuration : 500,
-    // More extra space:
-    extraSpace : 30
+    animateDuration : 500
   });
 </script>

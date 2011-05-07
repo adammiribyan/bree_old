@@ -1,23 +1,18 @@
-class CommentsController < ApplicationController
-  def index
-    @comments = Comment.all
-  end
-  
+class CommentsController < ApplicationController  
   def create
     @comment = Comment.new(params[:comment])
     
     if @comment.save 
-      redirect_to(@comment, :notice => "Comment was successfully created.")
-    else
-      render :action => "new"
+      @comments = Comment.where(:patient_id => params[:comment][:patient_id]).order("created_at desc")
     end
+    
+    respond_to :js
   end
   
   def destroy
-    @comment = Comment.find(params[:id])
+    @comment = Comment.find(params[:id])    
+    @comment.destroy
     
-    if @comment.destroy
-      redirect_to(comments_url)
-    end
+    respond_to :js
   end
 end
