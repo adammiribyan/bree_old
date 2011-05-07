@@ -438,6 +438,35 @@ ul.navigation-tabs {
     font-size: 0.7em;
     color: #888; }
 
+#button_to_add_new_patient {
+  position: absolute;
+  display: block;
+  z-index: 9;
+  left: -45%;
+  top: -1px; }
+
+span.action a {
+  background: url("https://d1a993iq9azmzq.cloudfront.net/images/bkd_page_action_button.png") no-repeat 100% 0%;
+  color: white;
+  display: block;
+  font-size: 10px;
+  font-weight: bold;
+  height: 32px;
+  line-height: 32px;
+  margin-left: 24px;
+  padding-right: 11px;
+  position: relative;
+  text-decoration: none;
+  text-shadow: rgba(0, 0, 0, 0.496) 0px 1px 1px;
+  white-space: nowrap; }
+  span.action a > span {
+    background: url("https://d1a993iq9azmzq.cloudfront.net/images/bkd_page_action_button.png") no-repeat 0% 100%;
+    display: block;
+    height: 32px;
+    line-height: 32px;
+    margin-left: -24px;
+    padding-left: 25px; }
+
 /* Magic search field at the header */
 .search-wrap {
   position: relative;

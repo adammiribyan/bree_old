@@ -7,8 +7,11 @@
 </div>
 <div id="header">
   <div class="inner">
-    <h1><%= AppConfig[:site_name] %></h1>
-    <div class="search-wrap clearfix">
+    <h1><%= AppConfig[:site_name] %></h1>    
+    <div class="search-wrap clearfix">  
+      <span id="button_to_add_new_patient" class="action">
+        <%= link_to content_tag(:span, "Новый пациент"), new_patient_path %>
+      </span>
       <span class="overlay-wrap">
         <label for="search_query" class="overlabel">Перейти к пациенту...</label>
         <%= autocomplete_field :patient, :full_name, application_autocomplete_patient_full_name_path, :id => "search_query" %>
