@@ -1,12 +1,27 @@
 <%= simple_form_for(@comment) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="inputs">
-    <%= f.input :body %>
-    <%= f.input :patient_id %>
-  </div>
+  <fieldset>
+  <%= f.input :body %>
+  </fieldset>
 
   <div class="actions">
-    <%= f.button :submit %>
+    <%= f.input :patient_id, :as => :hidden, :input_html => { :value => @patient.id} %>
+    <%= f.submit "Добавить комментарий" %>
   </div>
 <% end %>
+
+<script type="text/javascript">
+  $('textarea#comment_body').autoResize({
+    // On resize:
+    onResize : function() {
+      $(this).css({opacity:0.8});
+    },
+    // After resize:
+    animateCallback : function() {
+      $(this).css({opacity:1});
+    },
+    // Quite slow animation:
+    animateDuration : 500,
+    // More extra space:
+    extraSpace : 30
+  });
+</script>

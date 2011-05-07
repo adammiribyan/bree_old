@@ -33,14 +33,7 @@
   <div id="patientNotes" class="patient-notes-wrap">
     <div>
       <h3>Добавить комментарий о пациенте</h3>
-      <form class="simple_form">
-        <div class="input">
-          <textarea></textarea>
-        </div>
-        <div class="actions">
-          <input type="button" value="Добавить комментарий">
-        </div>
-      </form>
+      <%= render "comments/form" %>
     </div>
     <ul class="patient-notes">
       <li id="note1">

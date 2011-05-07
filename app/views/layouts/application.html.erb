@@ -4,7 +4,7 @@
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <title><%= yield :title %></title>
     <%= stylesheet_link_tag "application", "jquery-ui.custom" %>
-    <%= javascript_include_tag "jquery.min", "jquery-ui.custom.min", "jquery.jeditable.min", "application", "rails", "autocomplete-rails.js" %>    
+    <%= javascript_include_tag "jquery.min", "jquery-ui.custom.min", "autoresize.jquery.min", "jquery.jeditable.min", "application", "rails", "autocomplete-rails.js" %>    
     <%= csrf_meta_tag %>
   </head>
   <body class="<%= body_classes.join(" ") if body_classes.present? %>">    

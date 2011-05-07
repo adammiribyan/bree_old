@@ -3,10 +3,6 @@ class CommentsController < ApplicationController
     @comments = Comment.all
   end
   
-  def new
-    @comment = Comment.new
-  end
-  
   def create
     @comment = Comment.new(params[:comment])
     
@@ -23,6 +19,5 @@ class CommentsController < ApplicationController
     if @comment.destroy
       redirect_to(comments_url)
     end
-  end  
+  end
 end
-
