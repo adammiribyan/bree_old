@@ -1,6 +1,6 @@
 <%= simple_form_for(@patient) do |f| %>
   <fieldset>
-    <%= f.input :last_name, :label => "Фамилия", :autofocus => focus_only_new %>
+    <%= f.input :last_name, :label => "Фамилия", :autofocus => true %>
     <%= f.input :first_name, :label => "Имя" %>
     <%= f.input :middle_name, :label => "Отчество" %>
     <%= f.input :title, :label => "Специальность" %>
@@ -37,3 +37,9 @@
     </ol>
   </div>
 <% } %>
+
+<script type="text/javascript">
+  if (window.location.hash == "#additionalInfo") {
+    $("input#patient_hepatitis").focus();
+  }  
+</script>
