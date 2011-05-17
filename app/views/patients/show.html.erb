@@ -83,6 +83,16 @@
         <span><%= @patient.mucosa %></span>
       </li>
     </ul>
+    
+    <h5>Анкета</h5>
+    <% unless @patient.profile.present? %>
+      <%= simple_form_for(@patient, :html => { :multipart => true, :id => "patient_profile_form" }) do |f| %>
+        <div><%= image_tag "dots-white.gif", :class => "dots" %></div>
+        <%= file_field(:patient, :profile) %>
+      <% end %>
+    <% else %>
+      <%= link_to truncate(File.basename(@patient.profile.url.to_s), :length => 25), @patient.profile.url, :target => "blank", :id => "patient_profile" %>
+    <% end %>
   </div>
 
   <div id="recentVisits" class="sidebox-wrapper">

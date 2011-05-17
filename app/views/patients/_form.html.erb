@@ -1,9 +1,16 @@
-<%= simple_form_for(@patient) do |f| %>
+<%= simple_form_for(@patient, :html => { :multipart => true }) do |f| %>
   <fieldset>
     <%= f.input :last_name, :label => "Фамилия", :autofocus => true %>
     <%= f.input :first_name, :label => "Имя" %>
     <%= f.input :middle_name, :label => "Отчество" %>
     <%= f.input :title, :label => "Специальность" %>
+  </fieldset>
+  
+  <fieldset>    
+    <%= f.input :profile, :as => :file, :label => "Анкета пациента", :hint => "Скан или фотография заполненной пациентом анкеты." %>
+    <% if @patient.profile.present? %>
+      <%= link_to truncate(File.basename(@patient.profile.url.to_s), :length => 25), @patient.profile.url, :target => "blank", :id => "patient_profile" %>
+    <% end %>
   </fieldset>
   
   <fieldset>

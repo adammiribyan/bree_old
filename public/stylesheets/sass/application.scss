@@ -774,6 +774,10 @@ a.admin {
 }
 
 #additionalInfo {
+  ul + h5 {
+    margin-top: 1.4em;
+  }
+  
   ul {
     list-style: none;
     
@@ -1018,12 +1022,39 @@ body.form {
   }  
   
   #doctor_photo {
-    margin: 1.1666em 0 0.75em;
+    margin: 1.1666em 0 0.75em;  
   }
-  
+}
+
+#patient_profile_form {
+  input[type="file"] {
+    margin-top: 0.4166em;
+  }
+}
+
+#patient_photo_form,
+#patient_profile_form {
   .dots {
     display: none;
   }
+}
+
+fieldset {
+  a#patient_profile {
+    margin: 0 0 0.4166em 25%;
+  }
+}
+
+a#patient_profile {
+  display: block;
+  margin-top: 0.75em;
+  position: relative;
+  height: 32px;
+  background: url("/images/profile.png") no-repeat left;
+  padding-left: 40px;
+  color: #4D769F;
+  font-size: 1.166em;
+  font-family: "Courier New", Courier, serif;
 }
 
 .clearfix {

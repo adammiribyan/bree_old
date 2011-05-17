@@ -37,8 +37,10 @@ class PatientsController < ApplicationController
   def update
     @patient = Patient.find(params[:id])
     
-    # Crafting patient's full name
-    @patient.full_name = [params[:patient][:last_name], params[:patient][:first_name], params[:patient][:middle_name]].join(" ")
+    # Crafting patient's full name unless it's a profile file update
+    if params[:patient][:first_name]
+      @patient.full_name = [params[:patient][:last_name], params[:patient][:first_name], params[:patient][:middle_name]].join(" ")
+    end
     
     if @patient.update_attributes(params[:patient])
       redirect_to(@patient, :notice => "Данные о пациенте были успешно изменены.")

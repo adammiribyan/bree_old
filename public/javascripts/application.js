@@ -44,4 +44,13 @@ $(function() {
     $("#patient_photo_form").submit();
     return false;
   });
+  
+  // Patient's profile file
+  // show progress dots and hide the file field on submit
+  $("#patient_profile").change(function() {
+    $(".dots").show();
+    
+    $("#patient_profile_form").submit();
+    return false;
+  });
 })
