@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.4'
+gem 'rails', '3.0.7'
 
 gem 'mysql2'
 gem 'unicode'
@@ -32,4 +32,5 @@ group :development, :test do
   gem 'autotest-standalone'
   gem 'autotest-growl'
   gem 'mynyml-redgreen'  
+  gem 'turn'
 end

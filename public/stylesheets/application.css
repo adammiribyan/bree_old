@@ -424,7 +424,7 @@ ul.navigation-tabs {
   text-decoration: none; }
 
 .special {
-  background-color: #F1F8FE !important; }
+  background-color: #f1f8fe !important; }
 
 .header-button {
   background: url("/images/btn-back.png") no-repeat center;
@@ -939,7 +939,7 @@ table#services td.service_form {
       #doctors > ul > li h3 {
         font-size: 1.0833em;
         font-weight: bold;
-        line-height: 1.5;
+        line-height: 1;
         margin: 0; }
       #doctors > ul > li span {
         display: block; }
