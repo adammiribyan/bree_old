@@ -7,7 +7,10 @@
 </div>
 <div id="header">
   <div class="inner">
-    <h1><%= AppConfig[:site_name] %></h1>    
+    <h1><%= AppConfig[:site_name] %></h1>  
+    <% if request.headers['X-PJAX'] %>
+      PJAX!
+    <% end %>
     <div class="search-wrap clearfix">  
       <span id="button_to_add_new_patient" class="action">
         <%= link_to content_tag(:span, "Новый пациент"), new_patient_path %>
@@ -18,19 +21,19 @@
       </span>
     </div>
     <ul class="navigation-tabs">
-      <% if @controller.controller_name == "patients" %>
+      <% if controller.controller_name == "patients" %>
         <li class="current"><%= link_to "Пациенты", new_patient_path %></li>
       <% else %>
         <li><%= link_to "Пациенты", new_patient_path %></li>
       <% end %>
       
-      <% if @controller.controller_name == "doctors" %>
+      <% if controller.controller_name == "doctors" %>
         <li class="current"><%= link_to "Врачи", doctors_path %></li>
       <% else %>
         <li><%= link_to "Врачи", doctors_path %></li>
       <% end %>
       
-      <% if @controller.controller_name == "categories" %>
+      <% if controller.controller_name == "categories" %>
         <li class="current"><%= link_to "Услуги", categories_path %></li>      
       <% else %>
         <li><%= link_to "Услуги", categories_path %></li>

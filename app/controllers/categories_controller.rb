@@ -1,11 +1,15 @@
 class CategoriesController < ApplicationController
   def index
-    @categories = Category.roots
+    @categories = Category.roots 
+    
+    handle_pjax
   end
 
   def show
     @category = Category.find(params[:id])
     @service = Service.new
+    
+    handle_pjax
   end
 
   def new

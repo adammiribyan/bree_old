@@ -26,7 +26,7 @@ module ApplicationHelper
   end  
   
   def submit_label
-    case @controller.action_name
+    case controller.action_name
       when "new" 
         "Добавить"
       when "edit" 

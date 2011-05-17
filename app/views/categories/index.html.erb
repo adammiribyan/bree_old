@@ -9,6 +9,11 @@
         <th colspan="2"><h2>Категории</h2</th>
       </tr>
     </thead>
+    <tfoot>
+      <tr>
+        <td colspan="3"><%= link_to "Добавить категорию", new_category_path, :class => "admin" %></td>
+      </tr>
+    </tfoot>
     <tbody>
       <%= render @categories %>
     </tbody>
@@ -16,7 +21,7 @@
 </div>
 
 <% content_for(:sidebar) { %>
-  <div class="button-to-add-new-wrap clearfix">
+  <div class="button-to-add-new-wrap clearfix" style="display: none;">
     <span class="button">
       <%= link_to content_tag(:span, "Новая категория"), new_category_path %>
     </span>

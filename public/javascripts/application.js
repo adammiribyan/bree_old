@@ -1,4 +1,7 @@
 $(function() {
+  // PJAX stuff
+  $("a[data-pjax]").pjax();
+  
   /* magic search field */
   $(".overlay-wrap > input").attr("value", "")
   
@@ -16,7 +19,7 @@ $(function() {
 	});
   
   /* new service form toggle */
-  $("#services tfoot #new_service_form_link").click(function(event) {
+  $("#services tfoot #new_service_form_link").live("click", function(event) {
     event.preventDefault();
     
     $("#services tfoot tr#service_form").toggle();
