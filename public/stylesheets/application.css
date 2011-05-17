@@ -808,20 +808,20 @@ body.form .simple_form {
     padding-top: 13px;
     padding-left: 2px; }
 
-#patient_photo_form {
+#doctor_photo_form {
   display: none; }
-  #patient_photo_form h3 {
+  #doctor_photo_form h3 {
     font-size: 1.333em;
     font-weight: bold;
     margin: 0 0 0.75em;
     line-height: 1; }
-  #patient_photo_form #doctor_photo {
+  #doctor_photo_form #doctor_photo {
     margin: 1.1666em 0 0.75em; }
 
 #patient_profile_form input[type="file"] {
   margin-top: 0.4166em; }
 
-#patient_photo_form .dots,
+#doctor_photo_form .dots,
 #patient_profile_form .dots {
   display: none; }
 

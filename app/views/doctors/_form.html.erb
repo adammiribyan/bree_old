@@ -37,7 +37,7 @@
   </div>
 <% end %>
 
-<%= simple_form_for(@doctor, :html => { :multipart => true, :id => "patient_photo_form" }) do |f| %>
+<%= simple_form_for(@doctor, :html => { :multipart => true, :id => "doctor_photo_form" }) do |f| %>
   <fieldset class="<%= float_to_right_unless_new %> last-child">
     <h3>Изменить фотографию</h3>
     <div><%= image_tag "dots-white.gif", :class => "dots" %></div>

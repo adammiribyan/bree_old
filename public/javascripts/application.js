@@ -28,20 +28,20 @@ $(function() {
   $("#switch_to_photo").click(function(event) {
     event.preventDefault();
     $(".hide_while_photo").hide();
-    $("#patient_photo_form").fadeIn();
+    $("#doctor_photo_form").fadeIn();
   });
   
   $("#switch_to_data").click(function(event) {
     event.preventDefault();
     $(".hide_while_photo").fadeIn();
-    $("#patient_photo_form").hide();
+    $("#doctor_photo_form").hide();
   });
   
   $("#doctor_photo").change(function() {
     $(".dots").show();
     $(".cancel").hide();
     
-    $("#patient_photo_form").submit();
+    $("#doctor_photo_form").submit();
     return false;
   });
   
