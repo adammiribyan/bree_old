@@ -463,6 +463,27 @@ ul.navigation-tabs {
 
 .special { 
   background-color: #F1F8FE !important;
+  
+  ul.breadcrumbs {
+    position: relative;
+    font-size: 0.5769em;
+    
+    li {
+      list-style: none;
+      display: inline-block; 
+      
+      a {
+        color: #4D769F;
+      }
+      
+      &:after { 
+        content: " →";
+        vertical-align: top;
+      }
+      
+      &:last-child:after { content: ""; }
+    }
+  }
 }
 
 .header-button {

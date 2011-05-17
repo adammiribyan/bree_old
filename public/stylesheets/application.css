@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 Copyright (c) 2010, Yahoo! Inc. All rights reserved.
 Code licensed under the BSD License:
@@ -424,7 +425,20 @@ ul.navigation-tabs {
   text-decoration: none; }
 
 .special {
-  background-color: #f1f8fe !important; }
+  background-color: #F1F8FE !important; }
+  .special ul.breadcrumbs {
+    position: relative;
+    font-size: 0.5769em; }
+    .special ul.breadcrumbs li {
+      list-style: none;
+      display: inline-block; }
+      .special ul.breadcrumbs li a {
+        color: #4D769F; }
+      .special ul.breadcrumbs li:after {
+        content: " →";
+        vertical-align: top; }
+      .special ul.breadcrumbs li:last-child:after {
+        content: ""; }
 
 .header-button {
   background: url("/images/btn-back.png") no-repeat center;

@@ -1,7 +1,7 @@
 <% title @category.name.mb_chars.titleize.to_s %>
 
 <h1 class="special">
-  <%= @category.name.mb_chars.titleize.to_s %>
+  <%= render "breadcrumbs" %>  
   <div class="header-button"><%= link_to "Назад", parent_path %></div>
 </h1>
 

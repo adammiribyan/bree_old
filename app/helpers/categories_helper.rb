@@ -31,4 +31,8 @@ module CategoriesHelper
       categories_path
     end
   end
+  
+  def breadcrumbs_for(object)    
+    path = object.path if object.present?
+  end  
 end
