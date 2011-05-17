@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   before_filter :authenticate
   
+  helper_method :pjax?
+  
   protect_from_forgery
   autocomplete :patient, :full_name, :full => true  
   
