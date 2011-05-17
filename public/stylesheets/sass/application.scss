@@ -1293,6 +1293,18 @@ table#services {
   }
 }
 
+#loading {
+  position: absolute;
+  padding: 50px;
+  top: 50%;
+  left: 50%;
+  margin-top: -70px;
+  margin-left: -80px;
+  z-index: 999;
+  -webkit-border-radius: 1em;
+  display: none;
+}
+
 .nobr { white-space: nowrap; }
 .clear { 
   clear: both; 

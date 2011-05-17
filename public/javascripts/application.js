@@ -1,6 +1,9 @@
 $(function() {
   // PJAX stuff
   $("a[data-pjax]").pjax();
+  $('#content')
+    .bind('start.pjax', function() { $('#loading').show() })
+    .bind('end.pjax', function() { $('#loading').hide() })
   
   /* magic search field */
   $(".overlay-wrap > input").attr("value", "")
