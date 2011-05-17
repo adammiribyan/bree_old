@@ -1042,19 +1042,26 @@ body.form {
 fieldset {
   a#patient_profile {
     margin: 0 0 0.4166em 25%;
+    width: 45%;
   }
 }
 
 a#patient_profile {
   display: block;
-  margin-top: 0.75em;
+  margin: 0.15em 0.4166em 0 0.4166em;
   position: relative;
   height: 32px;
   background: url("/images/profile.png") no-repeat left;
-  padding-left: 40px;
+  padding: 12px 0 0 40px;
   color: #4D769F;
   font-size: 1.166em;
   font-family: "Courier New", Courier, serif;
+  
+  &:hover {
+    color: white;
+    background-color: #4D769F;
+    text-decoration: none;
+  }
 }
 
 .clearfix {
