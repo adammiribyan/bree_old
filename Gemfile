@@ -19,6 +19,9 @@ gem 'jquery-rails', '~>0.2'
 gem 'rails3-jquery-autocomplete'
 gem 'jeditable-rails'
 
+# RDiscount for Markdown implementation
+gem 'rdiscount'
+
 group :development do
   gem 'capistrano'
   gem 'thin'  
