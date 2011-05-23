@@ -11,7 +11,6 @@ module ApplicationHelper
   
   def body_classes
     @body_classes ||= [controller.controller_name]
-    @body_classes << "without-sidebar" if @without_sidebar
     
     if controller.action_name == "new"  || 
        controller.action_name == "edit" || 
