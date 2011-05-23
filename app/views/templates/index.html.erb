@@ -1,27 +1,19 @@
-<h1>Listing templates</h1>
+<% title "Шаблоны" %>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Body</th>
-    <th>Doctor</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<h1 class="special">Шаблоны</h1>
 
-<% @templates.each do |template| %>
-  <tr>
-    <td><%= template.name %></td>
-    <td><%= template.body %></td>
-    <td><%= template.doctor_id %></td>
-    <td><%= link_to 'Show', template %></td>
-    <td><%= link_to 'Edit', edit_template_path(template) %></td>
-    <td><%= link_to 'Destroy', template, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+<div id="templates">
+  <%= render @templates %>
+</div>
 
-<br />
+<%= highlight_when_changed %>
 
-<%= link_to 'New Template', new_template_path %>
+<% content_for(:sidebar) { %>
+  <div class="button-to-add-new-wrap clearfix">
+    <span class="button">
+      <%= link_to content_tag(:span, "Новый шаблон"), new_template_path %>
+    </span>
+  </div>
+  
+  <%= render "sidebar" %>
+<% } %>

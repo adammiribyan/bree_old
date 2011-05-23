@@ -396,6 +396,8 @@ ul.navigation-tabs {
 
 .navigation-tabs li {
   display: inline-block; }
+  .navigation-tabs li.indented {
+    margin-left: 1.0833em; }
 
 .navigation-tabs li.current a:link,
 .navigation-tabs li.current a:hover,
@@ -747,7 +749,8 @@ body.form .simple_form {
   body.form .simple_form #doctor_first_name,
   body.form .simple_form #doctor_last_name,
   body.form .simple_form #doctor_middle_name,
-  body.form .simple_form #category_name {
+  body.form .simple_form #category_name,
+  body.form .simple_form #template_name {
     font-size: 1.5em; }
   body.form .simple_form #patient_photo {
     float: left;
@@ -776,6 +779,14 @@ body.form .simple_form {
     font-weight: normal;
     line-height: 1.5;
     margin-left: 25%; }
+    body.form .simple_form .hint a:link, body.form .simple_form .hint a:visited {
+      color: inherit;
+      text-decoration: underline;
+      padding: 1px; }
+    body.form .simple_form .hint a:hover {
+      color: white;
+      background-color: #444;
+      text-decoration: none; }
   body.form .simple_form label {
     display: inline-block;
     font-weight: bold;
@@ -801,12 +812,44 @@ body.form .simple_form {
     font-weight: normal;
     padding: 3px;
     width: 60%; }
+  body.form .simple_form .boolean label {
+    display: inline;
+    margin-left: 0.417em;
+    width: 100%;
+    font-weight: normal; }
   body.form .simple_form .actions {
     display: block;
     margin-top: 20px;
     border-top: 2px solid #444;
     padding-top: 13px;
     padding-left: 2px; }
+
+body.without-sidebar #content {
+  width: 75%;
+  margin: 0 auto !important;
+  float: none; }
+
+body.templates .simple_form .string label,
+body.templates .simple_form .text label {
+  display: block !important;
+  margin-bottom: 0.5em; }
+body.templates .simple_form .string input, body.templates .simple_form .string textarea,
+body.templates .simple_form .numeric input,
+body.templates .simple_form .numeric textarea,
+body.templates .simple_form .text input,
+body.templates .simple_form .text textarea,
+body.templates .simple_form .password input,
+body.templates .simple_form .password textarea {
+  width: 90%; }
+body.templates .simple_form .string textarea,
+body.templates .simple_form .numeric textarea,
+body.templates .simple_form .text textarea,
+body.templates .simple_form .password textarea {
+  height: 6em;
+  display: block;
+  line-height: 1.5; }
+body.templates .simple_form .hint {
+  margin-left: 0; }
 
 #doctor_photo_form {
   display: none; }
@@ -951,6 +994,47 @@ table#services td.service_form {
     table#services td.service_form .simple_form input#service_price {
       font-size: 1.5em;
       width: 6em; }
+
+#templates {
+  position: relative;
+  display: block;
+  padding: 0.5em 0.5em 1em 1.9166em; }
+  #templates h1, #templates h2, #templates h3 {
+    margin: 0;
+    padding: 0;
+    border: none !important; }
+  #templates .template {
+    display: block;
+    position: relative;
+    margin: 0 1em 2.25em 0; }
+    #templates .template h1.template_name {
+      margin: 0.5em 0 !important;
+      line-height: 1.2 !important;
+      background-color: #E9E9E9;
+      border-radius: 0;
+      padding: 0.417em; }
+      #templates .template h1.template_name .controls {
+        position: absolute;
+        right: 0.417em;
+        top: 0.417em; }
+        #templates .template h1.template_name .controls .delete {
+          margin-right: 0.166em !important; }
+      #templates .template h1.template_name small {
+        font-size: 0.59375em;
+        line-height: 1.4;
+        color: #999;
+        display: inline-block;
+        margin-left: 0.4166em; }
+        #templates .template h1.template_name small strong {
+          font-weight: bold; }
+    #templates .template .template_body {
+      padding-left: 0.583em; }
+      #templates .template .template_body h2 {
+        font-size: 1.1666em;
+        font-weight: bold; }
+      #templates .template .template_body p {
+        font-size: 1.0833em;
+        width: 90%; }
 
 #doctors {
   position: relative;

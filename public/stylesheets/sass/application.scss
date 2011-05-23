@@ -427,7 +427,11 @@ ul.navigation-tabs {
 }
 
 .navigation-tabs li {
-  display: inline-block;  
+  display: inline-block;
+  
+  &.indented {
+    margin-left: 1.0833em;
+  }
 }
 
 .navigation-tabs li.current a:link,
@@ -929,7 +933,8 @@ body.form {
     #doctor_first_name,
     #doctor_last_name,
     #doctor_middle_name,
-    #category_name { font-size: 1.5em; }  
+    #category_name,
+    #template_name { font-size: 1.5em; }
     
     #patient_photo {
       float: left;
@@ -968,6 +973,21 @@ body.form {
       font-weight: normal;
       line-height: 1.5;
       margin-left: 25%;
+      
+      a {       
+        &:link,
+        &:visited {
+          color: inherit;
+          text-decoration: underline;
+          padding: 1px;
+        }
+        
+        &:hover {
+          color: white;
+          background-color: #444;
+          text-decoration: none;          
+        }
+      }
     }
     
     label {
@@ -997,6 +1017,15 @@ body.form {
         font-weight: normal;
         padding: 3px;
         width: 60%;
+      }      
+    }
+    
+    .boolean {      
+      label {
+        display: inline;
+        margin-left: 0.417em;
+        width: 100%;
+        font-weight: normal;
       }
     }
     
@@ -1006,6 +1035,45 @@ body.form {
       border-top: 2px solid #444;
       padding-top: 13px;
       padding-left: 2px;
+    }
+  }
+}
+
+body.without-sidebar {
+  #content {
+    width: 75%;
+    margin: 0 auto !important;
+    float: none;
+  }
+}
+
+body.templates {
+  .simple_form {
+    .string, 
+    .text {
+      label {
+        display: block !important;
+        margin-bottom: 0.5em;
+      }
+    }
+    
+    .string,
+    .numeric,
+    .text,
+    .password {
+      input, textarea {
+        width: 90%;
+      }
+      
+      textarea {
+        height: 6em;
+        display: block;
+        line-height: 1.5;
+      }
+    }
+    
+    .hint {
+      margin-left: 0;
     }
   }
 }
@@ -1228,6 +1296,64 @@ table#services {
         width: 6em;
       }
     }
+  }
+}
+
+#templates {
+  position: relative;
+  display: block;  
+  padding: 0.5em 0.5em 1em 1.9166em;
+  
+  h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+    border: none !important;    
+  }
+  
+  .template {
+    display: block;
+    position: relative;
+    margin: 0 1em 2.25em 0;
+    
+    h1.template_name {
+      margin: 0.5em 0 !important;
+      line-height: 1.2 !important;
+      background-color: #E9E9E9;
+      border-radius: 0;
+      padding: 0.417em;
+      
+      .controls {
+        position: absolute;
+        right: 0.417em;
+        top: 0.417em;
+        
+        .delete { margin-right: 0.166em !important; }
+      }
+      
+      small {
+        font-size: 0.59375em;
+        line-height: 1.4;
+        color: #999;
+        display: inline-block;
+        margin-left: 0.4166em;
+        
+        strong { font-weight: bold; }
+      }
+    }
+    
+    .template_body {
+      padding-left: 0.583em;
+      
+      h2 {
+        font-size: 1.1666em;
+        font-weight: bold;
+      }
+      
+      p {
+        font-size: 1.0833em;
+        width: 90%;
+      }      
+    }   
   }
 }
 

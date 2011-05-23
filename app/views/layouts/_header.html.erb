@@ -38,6 +38,12 @@
       <% else %>
         <li><%= link_to "Услуги", categories_path %></li>
       <% end %>
+      
+      <% if controller.controller_name == "templates" %>
+        <li class="current indented"><%= link_to "Шаблоны", templates_path %></li>      
+      <% else %>
+        <li class="indented"><%= link_to "Шаблоны", templates_path %></li>
+      <% end %>
     </ul>    
   </div>  
 </div>

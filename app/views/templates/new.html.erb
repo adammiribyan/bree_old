@@ -1,5 +1,11 @@
-<h1>New template</h1>
+<% title "Новый шаблон" %>
 
-<%= render 'form' %>
+<h1 class="special">Добавление нового шаблона</h1>
 
-<%= link_to 'Back', templates_path %>
+<div class="liner">
+  <%= render "form" %>
+</div>
+
+<% content_for(:sidebar) { %>  
+  <%= render "sidebar" %>
+<% } %>

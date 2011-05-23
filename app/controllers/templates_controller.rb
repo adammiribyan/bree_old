@@ -1,83 +1,49 @@
 class TemplatesController < ApplicationController
-  # GET /templates
-  # GET /templates.xml
+  before_filter :hide_sidebar, :only => [ :new, :edit ]
+  
   def index
-    @templates = Template.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @templates }
-    end
+    @templates = Template.all    
   end
-
-  # GET /templates/1
-  # GET /templates/1.xml
-  def show
-    @template = Template.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @template }
-    end
-  end
-
-  # GET /templates/new
-  # GET /templates/new.xml
+  
   def new
-    @template = Template.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @template }
-    end
+    @template = Template.new    
   end
 
-  # GET /templates/1/edit
   def edit
-    @template = Template.find(params[:id])
+    @template = Template.find(params[:id])    
   end
 
-  # POST /templates
-  # POST /templates.xml
   def create
     @template = Template.new(params[:template])
-
-    respond_to do |format|
-      if @template.save
-        format.html { redirect_to(@template, :notice => 'Template was successfully created.') }
-        format.xml  { render :xml => @template, :status => :created, :location => @template }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @template.errors, :status => :unprocessable_entity }
-      end
+    
+    if @template.save
+      redirect_to(templates_url, :flash => { :updated_id => @template.id }, :notice => "Tempate was successfully created.")
+    else
+      render :action => "name"
     end
   end
 
-  # PUT /templates/1
-  # PUT /templates/1.xml
   def update
     @template = Template.find(params[:id])
-
-    respond_to do |format|
-      if @template.update_attributes(params[:template])
-        format.html { redirect_to(@template, :notice => 'Template was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @template.errors, :status => :unprocessable_entity }
-      end
+    
+    if @template.update_attributes(params[:template])
+      redirect_to(templates_url, :flash => { :updated_id => @template.id }, :notice => "Template was successfully updated.")
+    else
+      render :action => "edit"
     end
   end
 
-  # DELETE /templates/1
-  # DELETE /templates/1.xml
   def destroy
     @template = Template.find(params[:id])
-    @template.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(templates_url) }
-      format.xml  { head :ok }
+    
+    if @template.destroy
+      redirect_to(templates_url)
     end
-  end
+  end  
+  
+  private
+  
+    def hide_sidebar 
+      @without_sidebar = true    
+    end
 end

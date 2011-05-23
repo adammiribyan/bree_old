@@ -11,14 +11,16 @@ module ApplicationHelper
   
   def body_classes
     @body_classes ||= [controller.controller_name]
+    @body_classes << "without-sidebar" if @without_sidebar
     
     if controller.action_name == "new"  || 
        controller.action_name == "edit" || 
        controller.controller_name == "categories" ||
-      controller.controller_name == "doctors"
+       controller.controller_name == "doctors" ||
+       controller.controller_name == "templates"
       
       @body_classes << "form"
-    end
+    end    
   end
   
   def focus_only_new

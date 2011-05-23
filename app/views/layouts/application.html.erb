@@ -14,9 +14,11 @@
         <div id="content" class="clearfix">
           <%= yield %>
         </div>
-        <div id="sidebar" class="clearfix">
-          <%= yield :sidebar %>          
-        </div>        
+        <% unless @without_sidebar %>
+          <div id="sidebar" class="clearfix">
+            <%= yield :sidebar %>          
+          </div>        
+        <% end %>
         <div id="footer" class="clearfix">
           <p>Managed by <a href="<%= AppConfig[:app_link] %>"><%= AppConfig[:app_name] %></a>.</p>
         </div>        
