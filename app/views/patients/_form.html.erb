@@ -35,16 +35,6 @@
   </div>
 <% end %>
 
-<% content_for(:sidebar) { %>
-  <div id="reminders" class="sidebox-wrapper">
-    <h5>Напоминания</h5>
-    <ol>
-      <li><%= check_box_tag "birthday", "1", true %> День рождения<li>
-      <li><%= check_box_tag "inspection", "1", true %> Профилактические осмотры</li>
-    </ol>
-  </div>
-<% } %>
-
 <script type="text/javascript">
   if (window.location.hash == "#additionalInfo") {
     $("input#patient_hepatitis").focus();
