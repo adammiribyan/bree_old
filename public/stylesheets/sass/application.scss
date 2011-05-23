@@ -1049,6 +1049,10 @@ body.without-sidebar {
 
 body.templates {
   .simple_form {
+    input#template_name {
+      font-weight: bold;
+    }
+    
     .string, 
     .text {
       label {

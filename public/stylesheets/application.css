@@ -829,6 +829,8 @@ body.without-sidebar #content {
   margin: 0 auto !important;
   float: none; }
 
+body.templates .simple_form input#template_name {
+  font-weight: bold; }
 body.templates .simple_form .string label,
 body.templates .simple_form .text label {
   display: block !important;
